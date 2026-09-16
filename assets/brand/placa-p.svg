@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Placa de estacionamento">
+  <circle cx="32" cy="32" r="30" fill="#2A2F36"/>
+  <rect x="23" y="17" width="7" height="30" rx="1" fill="#F5B301"/>
+  <path d="M30 18a7.5 7.5 0 0 1 0 15" fill="none" stroke="#F5B301" stroke-width="7"/>
+</svg>

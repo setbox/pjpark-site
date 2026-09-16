@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Cancela de estacionamento">
+  <defs>
+    <clipPath id="cancelaBarra"><rect x="15" y="26" width="45" height="12" rx="2"/></clipPath>
+  </defs>
+  <rect x="4" y="22" width="11" height="38" rx="2" fill="#2A2F36"/>
+  <rect x="15" y="26" width="45" height="12" rx="2" fill="#2A2F36"/>
+  <g clip-path="url(#cancelaBarra)" fill="#F5B301">
+    <path d="M22 26h8L18 38h-8z"/>
+    <path d="M34 26h8L30 38h-8z"/>
+    <path d="M46 26h8L42 38h-8z"/>
+    <path d="M58 26h8L54 38h-8z"/>
+  </g>
+</svg>

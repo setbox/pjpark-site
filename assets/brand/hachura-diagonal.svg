@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Hachura diagonal de advertencia">
+  <rect x="0" y="0" width="16" height="16" fill="#2A2F36"/>
+  <g stroke="#F5B301" stroke-width="8">
+    <path d="M-8 8 8-8"/>
+    <path d="M0 16 16 0"/>
+    <path d="M8 24 24 8"/>
+  </g>
+</svg>

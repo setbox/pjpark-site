@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 290" width="260" height="290" role="img" aria-label="Pin da PJ Park estacionado em uma vaga">
+  <rect width="260" height="290" rx="4" fill="#2A2F36"/>
+  <g fill="#F5B301" opacity="0.9">
+    <rect x="34" y="46" width="9" height="176" rx="1"/>
+    <rect x="217" y="46" width="9" height="176" rx="1"/>
+    <rect x="34" y="213" width="192" height="9" rx="1"/>
+  </g>
+  <g transform="translate(74,74) scale(1.9)">
+    <path d="M32 3C18.7 3 8 13.7 8 27c0 6.4 3.6 13.4 8.2 19.7A140 140 0 0 0 32 62.5a140 140 0 0 0 15.8-15.8C52.4 40.4 56 33.4 56 27 56 13.7 45.3 3 32 3Z" fill="#F5B301"/>
+    <rect x="29" y="12" width="6" height="11" rx="1" fill="#2A2F36"/>
+    <rect x="29" y="27" width="6" height="11" rx="1" fill="#2A2F36"/>
+    <path d="M29 42h6v8.5L32 55l-3-4.5V42Z" fill="#2A2F36"/>
+  </g>
+  <g fill="#F5B301" opacity="0.55">
+    <rect x="0" y="262" width="34" height="7" rx="1"/>
+    <rect x="58" y="262" width="34" height="7" rx="1"/>
+    <rect x="116" y="262" width="34" height="7" rx="1"/>
+    <rect x="174" y="262" width="34" height="7" rx="1"/>
+    <rect x="232" y="262" width="28" height="7" rx="1"/>
+  </g>
+</svg>
