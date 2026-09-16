@@ -3,141 +3,230 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Perguntas frequentes sobre a PJ Park - como funciona o serviço de empresa inativa, cobertura, preços e muito mais.">
+  <meta name="description" content="Preço, fidelidade, reativação, certificado digital e quem assina a contabilidade da sua empresa inativa.">
   <link rel="canonical" href="https://pjpark.com.br/faq/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PJ Park">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://pjpark.com.br/faq/">
   <meta property="og:title" content="Perguntas frequentes - PJ Park">
-  <meta property="og:description" content="Tire suas dúvidas sobre o serviço de empresa inativa da PJ Park.">
+  <meta property="og:description" content="Preço, fidelidade, reativação, certificado digital e quem assina a contabilidade da sua empresa inativa.">
   <meta property="og:image" content="https://pjpark.com.br/assets/og-image.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Perguntas frequentes - PJ Park">
-  <meta name="twitter:description" content="Tire suas dúvidas sobre o serviço de empresa inativa da PJ Park.">
+  <meta name="twitter:description" content="Preço, fidelidade, reativação, certificado digital e quem assina a contabilidade da sua empresa inativa.">
+  <meta name="twitter:image" content="https://pjpark.com.br/assets/og-image.png">
   <title>Perguntas frequentes - PJ Park</title>
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-  <link rel="mask-icon" href="../assets/safari-pinned-tab.svg" color="#ff3f6e">
   <link rel="manifest" href="../assets/site.webmanifest">
-  <meta name="theme-color" content="#193044">
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="theme-color" content="#F5B301">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','system-ui','-apple-system','sans-serif'] } } } }
-  </script>
-  <style>
-    body { background-color: #FAFAFA; color: #111111; }
-    .container-inner { max-width: 1024px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
-    @media (max-width: 768px) { .container-inner { padding-left: 16px; padding-right: 16px; } }
-    .faq-item { border-bottom: 1px solid #E5E5E5; }
-    .faq-item:last-child { border-bottom: none; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/pjpark.css">
 </head>
-<body class="font-sans antialiased">
+<body>
 
-  <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
-      <a href="../"><img src="../assets/apple-touch-icon.png" alt="PJ Park" class="h-8 w-auto rounded-lg"></a>
-      <div class="flex items-center gap-4 md:gap-7">
-        <a href="../baixa-de-empresa/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Baixa de empresa</a>
-        <a href="../servicos/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Serviços adicionais</a>
-        <a href="../blog/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Blog</a>
-        <button id="nav-toggle" class="md:hidden p-1" aria-label="Abrir menu" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="3" width="20" height="2" rx="1" fill="#111111"/>
-            <rect y="9" width="20" height="2" rx="1" fill="#111111"/>
-            <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
-          </svg>
+  <header class="topo">
+    <div class="faixa-conteudo topo__barra">
+      <a href="../" class="topo__marca" aria-label="PJ Park, página inicial">
+        <img src="../assets/brand/lockup-horizontal.svg" alt="PJ Park" class="so-claro" width="211" height="60">
+        <img src="../assets/brand/lockup-horizontal-escuro.svg" alt="PJ Park" class="so-escuro" width="211" height="60">
+      </a>
+      <nav class="topo__links" aria-label="Principal">
+        <a href="../baixa-de-empresa/" class="topo__link">Baixa de empresa</a>
+        <a href="../servicos/" class="topo__link">Serviços adicionais</a>
+        <a href="../faq/" class="topo__link" aria-current="page">Perguntas</a>
+      </nav>
+      <div class="topo__acoes">
+        <button class="menu-botao" id="menu-botao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-movel">
+          <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><g fill="currentColor"><rect width="18" height="2" rx="1"/><rect y="6" width="18" height="2" rx="1"/><rect y="12" width="18" height="2" rx="1"/></g></svg>
         </button>
-        <a href="https://app.pjpark.com.br" target="_blank" class="text-sm text-white px-4 py-1.5 rounded-[6px] transition-colors font-medium whitespace-nowrap" style="background:#ff3f6e;" onmouseover="this.style.background='#193044'" onmouseout="this.style.background='#ff3f6e'">Começar →</a>
+        <a href="https://app.pjpark.com.br" class="botao botao--sinal" target="_blank" rel="noopener">Começar</a>
       </div>
     </div>
-    <!-- Mobile menu -->
-    <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
-        <a href="../baixa-de-empresa/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Baixa de empresa</a>
-        <a href="../servicos/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Serviços adicionais</a>
-        <a href="../blog/" class="text-sm text-[#111111] py-2.5 hover:opacity-50 transition-opacity">Blog</a>
+    <div class="menu-movel" id="menu-movel">
+      <div class="faixa-conteudo">
+        <a href="../baixa-de-empresa/">Baixa de empresa</a>
+        <a href="../servicos/">Serviços adicionais</a>
+        <a href="../blog/">Blog</a>
+        <a href="../faq/">Perguntas frequentes</a>
+        <a href="../sobre/">Sobre a PJ Park</a>
+        <a href="../contato/">Contato</a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <main>
 
-    <section class="bg-[#f0f4f8] border-b border-[#E5E5E5]" style="padding-top:64px;padding-bottom:64px;">
-      <div class="container-inner" style="max-width:720px;">
-        <p class="text-[11px] font-semibold tracking-wide uppercase mb-3" style="color:#ff3f6e;">PJ Park</p>
-        <h1 class="text-[38px] md:text-[48px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#111111]">Perguntas frequentes</h1>
+    <section class="secao">
+      <div class="faixa-conteudo pilha pilha-24" style="max-width:824px;">
+        <p class="rotulo">Perguntas frequentes</p>
+        <h1>O que perguntam antes de estacionar</h1>
+        <p class="chamada">Preço, obrigações, certificado digital e saída, em respostas curtas. Cada uma leva para o texto que aprofunda o assunto no blog.</p>
       </div>
     </section>
 
-    <section style="padding-top:64px;padding-bottom:80px;">
-      <div class="container-inner" style="max-width:720px;">
+    <div class="borda-asfalto" role="presentation"></div>
 
-        <div class="faq-item py-8">
-          <h2 class="text-[18px] font-bold text-[#111111] mb-3">Quais cidades são atendidas?</h2>
-          <p class="text-[15px] leading-[1.8] text-[#444444]">Atendemos todas as cidades brasileiras.</p>
+    <section class="secao">
+      <div class="faixa-conteudo" style="max-width:824px;">
+        <div>
+          <div class="pergunta" id="preco">
+            <h3>Quanto custa?</h3>
+            <div class="texto-apoio"><p>R$ 69,90 por mês, por CNPJ. Serviços adicionais, como baixa de empresa ou certificado digital, são orçados à parte e você aprova antes de qualquer cobrança.</p></div>
+            <a href="../blog/quanto-custa-manter-cnpj-parado/" class="link-seta" style="margin-top:12px;font-size:14px;">Comparação com abandonar e com contabilidade tradicional</a>
+          </div>
+          <div class="pergunta" id="fidelidade">
+            <h3>Tem fidelidade ou multa de cancelamento?</h3>
+            <div class="texto-apoio"><p>Não. O contrato não tem prazo mínimo de permanência nem multa de rescisão. No plano anual, a parte não usada é devolvida proporcionalmente.</p></div>
+          </div>
+          <div class="pergunta" id="plano-anual">
+            <h3>Existe plano anual?</h3>
+            <div class="texto-apoio"><p>Existe, e o valor é apresentado no cadastro. Se você sair antes do fim do período, a parte não usada volta proporcionalmente. Nenhum plano tem multa de cancelamento.</p></div>
+          </div>
+          <div class="pergunta" id="varias-empresas">
+            <h3>Posso estacionar mais de uma empresa?</h3>
+            <div class="texto-apoio"><p>Pode. A mensalidade é por CNPJ, e cada empresa tem o próprio histórico de declarações e documentos dentro da mesma conta.</p></div>
+          </div>
+          <div class="pergunta" id="cidades">
+            <h3>Quais cidades são atendidas?</h3>
+            <div class="texto-apoio"><p>Atendemos empresas de todo o Brasil. As obrigações federais são as mesmas em qualquer cidade. Quando o município exige acesso ao sistema da prefeitura, pedimos esse acesso durante o cadastro.</p></div>
+            <a href="../blog/o-que-precisamos-de-voce/" class="link-seta" style="margin-top:12px;font-size:14px;">Tudo que pedimos no cadastro, item por item</a>
+          </div>
+          <div class="pergunta" id="comecar">
+            <h3>O que vocês precisam de mim para começar?</h3>
+            <div class="texto-apoio"><p>Contrato social e alterações, dados do administrador e o certificado digital da empresa. Acesso à prefeitura, à Receita Estadual e ao e-CAC entram quando o caso exige. O cadastro em si tem três passos: e-mail, CNPJ e contrato com pagamento.</p></div>
+            <a href="../blog/o-que-precisamos-de-voce/" class="link-seta" style="margin-top:12px;font-size:14px;">O que a gente precisa de você para começar</a>
+          </div>
+          <div class="pergunta" id="contabilidade-ativa">
+            <h3>Vocês fazem a contabilidade de empresas ativas?</h3>
+            <div class="texto-apoio"><p>Não. A PJ Park é uma empresa de tecnologia que oferece serviços administrativos e licença de uso do software para empresas inativas. A escrituração e o ato contábil são assinados por escritório parceiro com CRC ativo.</p><p>Quando o seu negócio voltar a operar, nosso contrato se encerra e você escolhe o escritório que quiser, o nosso parceiro ou qualquer outro.</p></div>
+            <a href="../blog/quem-assina-sua-contabilidade/" class="link-seta" style="margin-top:12px;font-size:14px;">Por que uma empresa de tecnologia não assina a sua contabilidade</a>
+          </div>
+          <div class="pergunta" id="declaracoes">
+            <h3>Quais declarações vocês entregam?</h3>
+            <div class="texto-apoio"><p>As obrigações acessórias que se aplicam ao regime da sua empresa, como PGDAS, SINTEGRA ou EFD, GFIP, DCTF e DEFIS, além da baixa de movimento quando o município exige. Cada entrega vira um comprovante baixável, organizado por competência.</p></div>
+            <a href="../blog/declaracoes-empresa-sem-faturamento/" class="link-seta" style="margin-top:12px;font-size:14px;">A lista completa, com a periodicidade de cada uma</a>
+          </div>
+          <div class="pergunta" id="abandonar">
+            <h3>O que acontece se eu simplesmente abandonar o CNPJ?</h3>
+            <div class="texto-apoio"><p>O CNPJ continua existindo para a Receita. As declarações seguem vencendo e a multa por declaração não entregue vai de R$ 50 a R$ 6.000. Some a isso restrição em financiamento, queda de score no CPF do sócio e possível recusa do seguro-desemprego.</p></div>
+            <a href="../blog/abandonei-meu-cnpj-e-agora/" class="link-seta" style="margin-top:12px;font-size:14px;">Plano de recuperação em quatro passos</a>
+          </div>
+          <div class="pergunta" id="divida">
+            <h3>E se a minha empresa já tiver dívida?</h3>
+            <div class="texto-apoio"><p>A análise levanta o passivo e mostra o tamanho real antes de qualquer decisão. Débito costuma ser parcelável, e sair da inadimplência é o que destrava certidão, crédito e a própria baixa. O que não fazemos é prometer que a dívida desaparece.</p></div>
+            <a href="../blog/divida-ativa-e-parcelamento/" class="link-seta" style="margin-top:12px;font-size:14px;">Como funciona a negociação do passivo</a>
+          </div>
+          <div class="pergunta" id="reativar">
+            <h3>Posso reativar minha empresa quando quiser?</h3>
+            <div class="texto-apoio"><p>Pode, a qualquer momento e sem multa. A reativação é assistida: você pede pelo app, a gente fecha as entregas do período e devolve documentos, comprovantes e histórico para você ou para o contador que vai assumir.</p></div>
+            <a href="../blog/reativar-empresa-inativa/" class="link-seta" style="margin-top:12px;font-size:14px;">O que acontece, passo a passo, quando você decide voltar</a>
+          </div>
+          <div class="pergunta" id="cancelar">
+            <h3>Como faço para cancelar?</h3>
+            <div class="texto-apoio"><p>Pelo aplicativo, sem carência e sem multa. O processo é o mesmo da reativação: fechamos o período, devolvemos documentos e histórico e encerramos o contrato.</p></div>
+            <a href="../blog/reativar-empresa-inativa/" class="link-seta" style="margin-top:12px;font-size:14px;">Como é a saída na prática</a>
+          </div>
+          <div class="pergunta" id="certificado">
+            <h3>Preciso de certificado digital?</h3>
+            <div class="texto-apoio"><p>Sim. É o certificado que permite entregar as declarações e falar com os órgãos em nome da empresa. Procuração no e-CAC resolve só o âmbito federal. Se você não tiver certificado, a emissão é um dos serviços adicionais.</p></div>
+            <a href="../blog/certificado-digital-ecpf-ecnpj-ecac/" class="link-seta" style="margin-top:12px;font-size:14px;">Diferença entre e-CPF, e-CNPJ e procuração e-CAC</a>
+          </div>
+          <div class="pergunta" id="seguranca">
+            <h3>Meus documentos ficam seguros?</h3>
+            <div class="texto-apoio"><p>O certificado digital fica cifrado em repouso e todo acesso é registrado. O login no aplicativo é por link de uso único, sem senha para vazar. Os comprovantes de cada entrega ficam disponíveis para download, por competência.</p></div>
+            <a href="../blog/certificado-digital-sob-custodia/" class="link-seta" style="margin-top:12px;font-size:14px;">O que fazemos com o certificado sob custódia</a>
+          </div>
+          <div class="pergunta" id="certificado-saida">
+            <h3>O que acontece com o meu certificado quando eu saio?</h3>
+            <div class="texto-apoio"><p>O certificado sob custódia é destruído no fim do contrato, e o acesso se encerra junto. Você recebe de volta os documentos e o histórico completo das entregas.</p></div>
+            <a href="../blog/certificado-digital-sob-custodia/" class="link-seta" style="margin-top:12px;font-size:14px;">Como o certificado é guardado e descartado</a>
+          </div>
+          <div class="pergunta" id="mei">
+            <h3>Vocês atendem MEI?</h3>
+            <div class="texto-apoio"><p>O plano foi desenhado para empresas com rotina de obrigações acessórias, que é o caso de uma ME ou EPP parada. Para MEI, muitas vezes dá para resolver sozinho no portal do empreendedor. Faz sentido conversar quando há atraso acumulado, dívida a negociar ou encerramento junto com outras pendências.</p></div>
+            <a href="../blog/mei-parado/" class="link-seta" style="margin-top:12px;font-size:14px;">O que muda para um MEI parado</a>
+          </div>
+          <div class="pergunta" id="baixa">
+            <h3>Quanto custa dar baixa na empresa?</h3>
+            <div class="texto-apoio"><p>O valor é fechado e sai depois da análise, que é gratuita e sem compromisso. Ele vale para o processo inteiro, sem cobrança por etapa no meio do caminho.</p></div>
+            <a href="../blog/baixa-de-empresa-passo-a-passo/" class="link-seta" style="margin-top:12px;font-size:14px;">O passo a passo completo do encerramento</a>
+          </div>
+          <div class="pergunta" id="estacionar-ou-encerrar">
+            <h3>Não sei se estaciono ou encerro. Como decido?</h3>
+            <div class="texto-apoio"><p>Depende de quatro coisas: chance real de voltar a faturar, valor do nome da empresa, tamanho do passivo e quanto cada caminho custa em doze meses. Se a resposta for "ainda não sei", estacionar existe exatamente para comprar esse tempo sem acumular irregularidade.</p></div>
+            <a href="../blog/estacionar-ou-encerrar/" class="link-seta" style="margin-top:12px;font-size:14px;">Cinco perguntas para decidir</a>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-item py-8">
-          <h2 class="text-[18px] font-bold text-[#111111] mb-3">Vocês fazem contabilidade de empresas ativas?</h2>
-          <p class="text-[15px] leading-[1.8] text-[#444444]">A PJ Park não é um escritório de contabilidade. Somos uma empresa de tecnologia que oferece serviços combinados de escritório e suporte administrativo para empresas inativas.</p>
-          <p class="text-[15px] leading-[1.8] text-[#444444] mt-3">Mantemos uma parceria com um escritório contábil para quando o seu negócio voltar a operar. Ao reativar sua empresa, nosso contrato se encerra e você pode contratar nosso parceiro ou qualquer outro escritório de sua preferência.</p>
+    <section class="secao secao--escura">
+      <div class="faixa-conteudo pilha pilha-24 centro" style="max-width:620px;">
+        <h2>Ainda com dúvida?</h2>
+        <p class="texto-apoio centro">Comece pelo cadastro ou fale com a gente antes. Sem compromisso.</p>
+        <div class="acoes" style="justify-content:center;">
+          <a href="https://app.pjpark.com.br" class="botao botao--sinal" target="_blank" rel="noopener">Começar</a>
+          <a href="mailto:contato@pjpark.com.br" class="botao botao--linha">Falar com a gente</a>
         </div>
-
-        <div class="faq-item py-8">
-          <h2 class="text-[18px] font-bold text-[#111111] mb-3">O que acontece se eu simplesmente abandonar meu CNPJ?</h2>
-          <p class="text-[15px] leading-[1.8] text-[#444444]">Abandonar um CNPJ ativo sem formalizar a baixa ou manter as obrigações em dia gera consequências sérias: multas por declarações não entregues (de R$ 50 a R$ 6.000 por declaração), restrições em financiamentos, queda no score de crédito e possível recusa do seguro-desemprego pelo Ministério do Trabalho.</p>
-          <p class="text-[15px] leading-[1.8] text-[#444444] mt-3">A PJ Park cuida de todas essas obrigações pelo seu CNPJ inativo, mantendo-o regularizado enquanto você decide o que fazer.</p>
-        </div>
-
-        <div class="faq-item py-8">
-          <h2 class="text-[18px] font-bold text-[#111111] mb-3">Posso reativar minha empresa quando quiser?</h2>
-          <p class="text-[15px] leading-[1.8] text-[#444444]">Sim. Você pode reativar sua empresa a qualquer momento. Não há fidelidade no plano de empresa inativa. Basta solicitar pelo aplicativo e providenciaremos tudo.</p>
-        </div>
-
-        <div class="faq-item py-8">
-          <h2 class="text-[18px] font-bold text-[#111111] mb-3">Qual o valor do serviço?</h2>
-          <p class="text-[15px] leading-[1.8] text-[#444444]">O serviço de empresa inativa custa R$ 59,90 por mês, sem fidelidade. Para serviços adicionais como baixa de empresa, consulte nossa <a href="../servicos/" class="font-medium hover:opacity-70 transition-opacity" style="color:#ff3f6e;">página de serviços</a>.</p>
-        </div>
-
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
-      <div class="flex flex-col md:flex-row gap-16">
-        <div>
-          <a href="https://setbox.com.br" target="_blank"><img src="../assets/setbox-lateral.png" alt="Setbox" class="h-6 w-auto mb-5" width="1405" height="466"></a>
-          <p class="text-[12px] text-[#BBBBBB] mb-1">© 2026 Setbox Serviços Digitais</p>
-          <p class="text-[12px] text-[#BBBBBB]">Rua João Bettega, 649 - Sala 3A<br>Curitiba / PR</p>
-        </div>
-        <div>
-          <p class="text-[11px] font-semibold tracking-wide uppercase mb-3" style="color:#888888;">Empresa</p>
-          <div class="flex flex-col gap-2">
-            <a href="../faq/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Perguntas frequentes</a>
-            <a href="../termos-de-uso/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Termos de Uso</a>
-            <a href="../politica-de-privacidade/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Política de Privacidade</a>
-          </div>
-        </div>
+  <footer class="rodape">
+    <div class="faixa-conteudo rodape__grade">
+      <div class="rodape__marca">
+        <img src="../assets/brand/lockup-horizontal.svg" alt="PJ Park" class="so-claro" width="211" height="60">
+        <img src="../assets/brand/lockup-horizontal-escuro.svg" alt="PJ Park" class="so-escuro" width="211" height="60">
+        <p class="rodape__miudo">Escritório online para empresas inativas.<br>pjpark.com.br</p>
+      </div>
+      <div class="rodape__coluna">
+        <h4>PJ Park</h4>
+        <a href="../sobre/">Sobre a PJ Park</a>
+        <a href="../contato/">Contato</a>
+        <a href="../blog/">Blog</a>
+      </div>
+      <div class="rodape__coluna">
+        <h4>Produto</h4>
+        <a href="../baixa-de-empresa/">Baixa de empresa</a>
+        <a href="../servicos/">Serviços adicionais</a>
+        <a href="../faq/">Perguntas frequentes</a>
+      </div>
+      <div class="rodape__coluna">
+        <h4>Empresa</h4>
+        <a href="../termos-de-uso/">Termos de Uso</a>
+        <a href="../politica-de-privacidade/">Política de Privacidade</a>
+        <a href="mailto:contato@pjpark.com.br">contato@pjpark.com.br</a>
+      </div>
+    </div>
+    <div class="faixa-conteudo" style="margin-top:36px;">
+      <div class="faixa" role="presentation"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;margin-top:20px;">
+        <a href="https://setbox.com.br" target="_blank" rel="noopener" class="rodape__setbox" aria-label="Setbox">
+          <img src="../assets/setbox-lateral.png" alt="Setbox" width="1405" height="466">
+        </a>
+        <p class="rodape__miudo">© 2026 Setbox Serviços Digitais<span class="ponto" aria-hidden="true">·</span>CNPJ 08.889.601/0001-09<br>Av. Carneiro Leão, 563 - Zona 01, Maringá / PR - 87014-010</p>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-      var menu = document.getElementById('nav-menu');
-      menu.classList.toggle('hidden');
-      this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
-    });
+    (function () {
+      var botao = document.getElementById('menu-botao');
+      var menu = document.getElementById('menu-movel');
+      botao.addEventListener('click', function () {
+        var aberto = menu.getAttribute('data-aberto') === 'true';
+        menu.setAttribute('data-aberto', String(!aberto));
+        botao.setAttribute('aria-expanded', String(!aberto));
+      });
+    })();
   </script>
 </body>
 </html>
