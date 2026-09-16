@@ -3,123 +3,252 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Blog PJ Park - Artigos sobre empresas inativas, CNPJ, regularização, baixa de empresa e obrigações acessórias.">
+  <meta name="description" content="Textos sobre empresa inativa, baixa de CNPJ e o que fazer com um negócio parado.">
   <link rel="canonical" href="https://pjpark.com.br/blog/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PJ Park">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://pjpark.com.br/blog/">
   <meta property="og:title" content="Blog - PJ Park">
-  <meta property="og:description" content="Artigos sobre empresas inativas, CNPJ, regularização, baixa de empresa e obrigações acessórias.">
+  <meta property="og:description" content="Textos sobre empresa inativa, baixa de CNPJ e o que fazer com um negócio parado.">
   <meta property="og:image" content="https://pjpark.com.br/assets/og-image.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Blog - PJ Park">
-  <meta name="twitter:description" content="Artigos sobre empresas inativas, CNPJ, regularização e obrigações acessórias.">
+  <meta name="twitter:description" content="Textos sobre empresa inativa, baixa de CNPJ e o que fazer com um negócio parado.">
+  <meta name="twitter:image" content="https://pjpark.com.br/assets/og-image.png">
   <title>Blog - PJ Park</title>
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-  <link rel="mask-icon" href="../assets/safari-pinned-tab.svg" color="#ff3f6e">
   <link rel="manifest" href="../assets/site.webmanifest">
-  <meta name="theme-color" content="#193044">
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="theme-color" content="#F5B301">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','system-ui','-apple-system','sans-serif'] } } } }
-  </script>
-  <style>
-    body { background-color: #FAFAFA; color: #111111; }
-    .container-inner { max-width: 1024px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
-    @media (max-width: 768px) { .container-inner { padding-left: 16px; padding-right: 16px; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/pjpark.css">
 </head>
-<body class="font-sans antialiased">
+<body>
 
-  <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
-      <a href="../"><img src="../assets/apple-touch-icon.png" alt="PJ Park" class="h-8 w-auto rounded-lg"></a>
-      <div class="flex items-center gap-4 md:gap-7">
-        <a href="../baixa-de-empresa/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Baixa de empresa</a>
-        <a href="../servicos/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Serviços adicionais</a>
-        <a href="./" class="hidden md:block text-sm font-medium" style="color:#ff3f6e;">Blog</a>
-        <button id="nav-toggle" class="md:hidden p-1" aria-label="Abrir menu" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="3" width="20" height="2" rx="1" fill="#111111"/>
-            <rect y="9" width="20" height="2" rx="1" fill="#111111"/>
-            <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
-          </svg>
+  <header class="topo">
+    <div class="faixa-conteudo topo__barra">
+      <a href="../" class="topo__marca" aria-label="PJ Park, página inicial">
+        <img src="../assets/brand/lockup-horizontal.svg" alt="PJ Park" class="so-claro" width="211" height="60">
+        <img src="../assets/brand/lockup-horizontal-escuro.svg" alt="PJ Park" class="so-escuro" width="211" height="60">
+      </a>
+      <nav class="topo__links" aria-label="Principal">
+        <a href="../baixa-de-empresa/" class="topo__link">Baixa de empresa</a>
+        <a href="../servicos/" class="topo__link">Serviços adicionais</a>
+        <a href="../faq/" class="topo__link">Perguntas</a>
+      </nav>
+      <div class="topo__acoes">
+        <button class="menu-botao" id="menu-botao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-movel">
+          <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><g fill="currentColor"><rect width="18" height="2" rx="1"/><rect y="6" width="18" height="2" rx="1"/><rect y="12" width="18" height="2" rx="1"/></g></svg>
         </button>
-        <a href="https://app.pjpark.com.br" target="_blank" class="text-sm text-white px-4 py-1.5 rounded-[6px] transition-colors font-medium whitespace-nowrap" style="background:#ff3f6e;" onmouseover="this.style.background='#193044'" onmouseout="this.style.background='#ff3f6e'">Começar →</a>
+        <a href="https://app.pjpark.com.br" class="botao botao--sinal" target="_blank" rel="noopener">Começar</a>
       </div>
     </div>
-    <!-- Mobile menu -->
-    <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
-        <a href="../baixa-de-empresa/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Baixa de empresa</a>
-        <a href="../servicos/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Serviços adicionais</a>
-        <a href="./" class="text-sm font-medium py-2.5" style="color:#ff3f6e;">Blog</a>
+    <div class="menu-movel" id="menu-movel">
+      <div class="faixa-conteudo">
+        <a href="../baixa-de-empresa/">Baixa de empresa</a>
+        <a href="../servicos/">Serviços adicionais</a>
+        <a href="../blog/">Blog</a>
+        <a href="../faq/">Perguntas frequentes</a>
+        <a href="../sobre/">Sobre a PJ Park</a>
+        <a href="../contato/">Contato</a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <main>
 
-    <section class="bg-[#f0f4f8] border-b border-[#E5E5E5]" style="padding-top:64px;padding-bottom:64px;">
-      <div class="container-inner">
-        <p class="text-[11px] font-semibold tracking-wide uppercase mb-3" style="color:#ff3f6e;">PJ Park</p>
-        <h1 class="text-[38px] md:text-[48px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#111111]">Blog</h1>
+    <section class="secao">
+      <div class="faixa-conteudo pilha pilha-24" style="max-width:824px;">
+        <p class="rotulo">Blog</p>
+        <h1>O que fazer com um CNPJ parado</h1>
+        <p class="chamada">Leitura sem juridiquês para quem precisa decidir entre esperar, reativar ou encerrar, sem inventar atalho e sem susto no futuro.</p>
       </div>
     </section>
 
-    <section style="padding-top:64px;padding-bottom:80px;">
-      <div class="container-inner" style="max-width:720px;">
+    <div class="borda-asfalto" role="presentation"></div>
 
-        <article class="border border-[#E5E5E5] rounded-xl bg-white p-8 hover:border-[#ff3f6e] transition-colors">
-          <p class="text-[11px] font-semibold tracking-wide uppercase mb-3" style="color:#ff3f6e;">Empresa inativa</p>
-          <h2 class="text-[22px] font-bold leading-[1.2] tracking-tight text-[#111111] mb-3">
-            <a href="devo-inativar-minha-empresa/" class="hover:opacity-70 transition-opacity">Devo inativar a minha empresa?</a>
-          </h2>
-          <p class="text-[14px] leading-[1.7] text-[#555555] mb-5">
-            Um dos momentos mais frustrantes para qualquer empreendedor é ter que encerrar as atividades da sua empresa. Após tanto trabalho e planejamento, não é fácil aceitar que o investimento não deu o retorno esperado. Mas existem alternativas à baixa definitiva.
-          </p>
-          <a href="devo-inativar-minha-empresa/" class="inline-flex items-center gap-2 text-[13px] font-medium hover:opacity-70 transition-opacity" style="color:#ff3f6e;">Ler artigo →</a>
-        </article>
-
+    <section class="secao">
+      <div class="faixa-conteudo" style="max-width:824px;">
+        <div>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Decisão</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Devo inativar a minha empresa?</h2>
+            <p class="texto-apoio">Nem sempre encerrar é a melhor saída. Os riscos de abandonar, a burocracia de fechar e a terceira opção entre as duas.</p>
+            <a href="devo-inativar-minha-empresa/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Decisão</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Estacionar ou encerrar: cinco perguntas para decidir</h2>
+            <p class="texto-apoio">Cinco perguntas que resolvem a dúvida em dez minutos, sem precisar de opinião de ninguém.</p>
+            <a href="estacionar-ou-encerrar/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Vocabulário</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Empresa inativa, sem movimento ou baixada: qual é a diferença</h2>
+            <p class="texto-apoio">Três palavras que parecem a mesma coisa e levam a decisões opostas. Uma delas ainda gera obrigação todo mês.</p>
+            <a href="empresa-inativa-sem-movimento-ou-baixada/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Obrigações</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Quais declarações uma empresa sem faturamento ainda precisa entregar</h2>
+            <p class="texto-apoio">Faturamento zero não zera a obrigação. A lista do que vence todo mês, todo semestre e todo ano.</p>
+            <a href="declaracoes-empresa-sem-faturamento/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Obrigações</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Como provar que a sua empresa ficou em dia</h2>
+            <p class="texto-apoio">Dizer que está tudo certo é fácil. O que vale é o comprovante por competência, pronto para entregar a qualquer contador.</p>
+            <a href="como-provar-que-a-empresa-esta-em-dia/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Custos</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Quanto custa manter um CNPJ parado</h2>
+            <p class="texto-apoio">Três caminhos, três contas. Inclusive a do caminho que parece de graça e não é.</p>
+            <a href="quanto-custa-manter-cnpj-parado/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Regularização</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Abandonei meu CNPJ, e agora?</h2>
+            <p class="texto-apoio">Quatro passos para sair do limbo, na ordem em que eles realmente destravam o problema.</p>
+            <a href="abandonei-meu-cnpj-e-agora/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Regularização</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Dívida ativa e parcelamento: como negociar o passivo de uma empresa parada</h2>
+            <p class="texto-apoio">Dívida não some com a baixa. O que muda quando ela é inscrita e como o parcelamento destrava o resto.</p>
+            <a href="divida-ativa-e-parcelamento/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Regularização</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Contabilidade retroativa: quando vale refazer o passado</h2>
+            <p class="texto-apoio">Anos sem escrituração cobram a conta na baixa, na venda e no crédito. Quando vale refazer e quando não vale.</p>
+            <a href="contabilidade-retroativa/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Riscos</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">CNPJ ativo atrapalha o seguro-desemprego?</h2>
+            <p class="texto-apoio">Ter empresa aberta pode barrar o benefício, mesmo que ela não fature nada. O motivo e as saídas.</p>
+            <a href="cnpj-ativo-e-seguro-desemprego/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Riscos</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Inaptidão do CNPJ: o que acontece quando a empresa some do radar</h2>
+            <p class="texto-apoio">Não entregar declaração por tempo demais tem nome e consequência. E tem caminho de volta.</p>
+            <a href="inaptidao-do-cnpj/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Encerramento</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Baixa de empresa: o passo a passo real</h2>
+            <p class="texto-apoio">O caminho completo do encerramento, na ordem em que cada etapa trava a seguinte.</p>
+            <a href="baixa-de-empresa-passo-a-passo/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Documentos</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Certificado digital: e-CPF, e-CNPJ e procuração e-CAC</h2>
+            <p class="texto-apoio">Qual serve para quê, por que pedimos um deles e por que a procuração eletrônica não cobre tudo.</p>
+            <a href="certificado-digital-ecpf-ecnpj-ecac/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Documentos</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Certidões negativas: quando você vai precisar de cada uma</h2>
+            <p class="texto-apoio">Federal, estadual, municipal e FGTS. Quem pede cada uma, e por que elas saem com pendência.</p>
+            <a href="certidoes-negativas-de-debitos/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Onboarding</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">O que a gente precisa de você para começar</h2>
+            <p class="texto-apoio">A lista completa do que pedimos no cadastro, com a razão de cada item. Nada de burocracia sem explicação.</p>
+            <a href="o-que-precisamos-de-voce/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Segurança</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Seu certificado digital sob custódia: o que fazemos com ele</h2>
+            <p class="texto-apoio">Entregar certificado a alguém é um ato de confiança. O que a gente faz para merecer, em detalhe.</p>
+            <a href="certificado-digital-sob-custodia/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Transparência</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Por que uma empresa de tecnologia não assina a sua contabilidade</h2>
+            <p class="texto-apoio">Onde termina o software e começa a responsabilidade profissional do contador, e por que essa linha existe.</p>
+            <a href="quem-assina-sua-contabilidade/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Parceria</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Sou contador: como funciona a parceria com a PJ Park</h2>
+            <p class="texto-apoio">Carteira de clientes parados, portal próprio e o ato contábil com quem tem CRC. O convite está aberto.</p>
+            <a href="parceria-para-contadores/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">MEI</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">MEI parado: dá para estacionar?</h2>
+            <p class="texto-apoio">O MEI é um caso à parte. O que continua vencendo, o que a baixa simplificada resolve e onde a PJ Park entra.</p>
+            <a href="mei-parado/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+          <article class="servico">
+            <p class="rotulo" style="margin-bottom:8px;">Reativação</p>
+            <h2 style="font-size:24px;margin-bottom:10px;">Reativar a empresa: o que acontece quando você decide voltar</h2>
+            <p class="texto-apoio">O que a gente faz, o que você recebe de volta e por que não chamamos isso de um clique.</p>
+            <a href="reativar-empresa-inativa/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
+          </article>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
-      <div class="flex flex-col md:flex-row gap-16">
-        <div>
-          <a href="https://setbox.com.br" target="_blank"><img src="../assets/setbox-lateral.png" alt="Setbox" class="h-6 w-auto mb-5" width="1405" height="466"></a>
-          <p class="text-[12px] text-[#BBBBBB] mb-1">© 2026 Setbox Serviços Digitais</p>
-          <p class="text-[12px] text-[#BBBBBB]">Rua João Bettega, 649 - Sala 3A<br>Curitiba / PR</p>
-        </div>
-        <div>
-          <p class="text-[11px] font-semibold tracking-wide uppercase mb-3" style="color:#888888;">Empresa</p>
-          <div class="flex flex-col gap-2">
-            <a href="../faq/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Perguntas frequentes</a>
-            <a href="../termos-de-uso/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Termos de Uso</a>
-            <a href="../politica-de-privacidade/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Política de Privacidade</a>
-          </div>
-        </div>
+  <footer class="rodape">
+    <div class="faixa-conteudo rodape__grade">
+      <div class="rodape__marca">
+        <img src="../assets/brand/lockup-horizontal.svg" alt="PJ Park" class="so-claro" width="211" height="60">
+        <img src="../assets/brand/lockup-horizontal-escuro.svg" alt="PJ Park" class="so-escuro" width="211" height="60">
+        <p class="rodape__miudo">Escritório online para empresas inativas.<br>pjpark.com.br</p>
+      </div>
+      <div class="rodape__coluna">
+        <h4>PJ Park</h4>
+        <a href="../sobre/">Sobre a PJ Park</a>
+        <a href="../contato/">Contato</a>
+        <a href="../blog/">Blog</a>
+      </div>
+      <div class="rodape__coluna">
+        <h4>Produto</h4>
+        <a href="../baixa-de-empresa/">Baixa de empresa</a>
+        <a href="../servicos/">Serviços adicionais</a>
+        <a href="../faq/">Perguntas frequentes</a>
+      </div>
+      <div class="rodape__coluna">
+        <h4>Empresa</h4>
+        <a href="../termos-de-uso/">Termos de Uso</a>
+        <a href="../politica-de-privacidade/">Política de Privacidade</a>
+        <a href="mailto:contato@pjpark.com.br">contato@pjpark.com.br</a>
+      </div>
+    </div>
+    <div class="faixa-conteudo" style="margin-top:36px;">
+      <div class="faixa" role="presentation"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;margin-top:20px;">
+        <a href="https://setbox.com.br" target="_blank" rel="noopener" class="rodape__setbox" aria-label="Setbox">
+          <img src="../assets/setbox-lateral.png" alt="Setbox" width="1405" height="466">
+        </a>
+        <p class="rodape__miudo">© 2026 Setbox Serviços Digitais<span class="ponto" aria-hidden="true">·</span>CNPJ 08.889.601/0001-09<br>Av. Carneiro Leão, 563 - Zona 01, Maringá / PR - 87014-010</p>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-      var menu = document.getElementById('nav-menu');
-      menu.classList.toggle('hidden');
-      this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
-    });
+    (function () {
+      var botao = document.getElementById('menu-botao');
+      var menu = document.getElementById('menu-movel');
+      botao.addEventListener('click', function () {
+        var aberto = menu.getAttribute('data-aberto') === 'true';
+        menu.setAttribute('data-aberto', String(!aberto));
+        botao.setAttribute('aria-expanded', String(!aberto));
+      });
+    })();
   </script>
 </body>
 </html>
