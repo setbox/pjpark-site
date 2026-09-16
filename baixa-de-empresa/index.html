@@ -3,212 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Encerre seu CNPJ com a PJ Park. Análise completa de pendências, processo 100% online e transparente, fechamento em prazo recorde.">
+  <meta name="description" content="Encerramento definitivo do CNPJ com análise inicial gratuita, preço fechado e acompanhamento de cada etapa pelo app.">
   <link rel="canonical" href="https://pjpark.com.br/baixa-de-empresa/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PJ Park">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://pjpark.com.br/baixa-de-empresa/">
   <meta property="og:title" content="Baixa de empresa - PJ Park">
-  <meta property="og:description" content="Encerre seu CNPJ com a PJ Park. Análise completa de pendências, processo 100% online e transparente, fechamento em prazo recorde.">
+  <meta property="og:description" content="Encerramento definitivo do CNPJ com análise inicial gratuita, preço fechado e acompanhamento de cada etapa pelo app.">
   <meta property="og:image" content="https://pjpark.com.br/assets/og-image.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Baixa de empresa - PJ Park">
-  <meta name="twitter:description" content="Encerre seu CNPJ com a PJ Park. Análise completa, processo online, prazo recorde.">
+  <meta name="twitter:description" content="Encerramento definitivo do CNPJ com análise inicial gratuita, preço fechado e acompanhamento de cada etapa pelo app.">
+  <meta name="twitter:image" content="https://pjpark.com.br/assets/og-image.png">
   <title>Baixa de empresa - PJ Park</title>
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-  <link rel="mask-icon" href="../assets/safari-pinned-tab.svg" color="#ff3f6e">
   <link rel="manifest" href="../assets/site.webmanifest">
-  <meta name="theme-color" content="#193044">
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="theme-color" content="#F5B301">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','system-ui','-apple-system','sans-serif'] } } } }
-  </script>
-  <style>
-    body { background-color: #FAFAFA; color: #111111; }
-    html { scroll-behavior: smooth; }
-    .container-inner { max-width: 1024px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
-    @media (max-width: 768px) {
-      .container-inner { padding-left: 16px; padding-right: 16px; }
-      .two-col { grid-template-columns: 1fr !important; }
-      .three-col { grid-template-columns: 1fr !important; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/pjpark.css">
 </head>
-<body class="font-sans antialiased">
+<body>
 
-  <nav class="sticky top-0 z-50 bg-[#FAFAFA] border-b border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
-      <a href="../"><img src="../assets/apple-touch-icon.png" alt="PJ Park" class="h-8 w-auto rounded-lg"></a>
-      <div class="flex items-center gap-4 md:gap-7">
-        <a href="./" class="hidden md:block text-sm font-medium" style="color:#ff3f6e;">Baixa de empresa</a>
-        <a href="../servicos/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Serviços adicionais</a>
-        <a href="../blog/" class="hidden md:block text-sm text-[#111111] hover:opacity-50 transition-opacity">Blog</a>
-        <button id="nav-toggle" class="md:hidden p-1" aria-label="Abrir menu" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="3" width="20" height="2" rx="1" fill="#111111"/>
-            <rect y="9" width="20" height="2" rx="1" fill="#111111"/>
-            <rect y="15" width="20" height="2" rx="1" fill="#111111"/>
-          </svg>
+  <header class="topo">
+    <div class="faixa-conteudo topo__barra">
+      <a href="../" class="topo__marca" aria-label="PJ Park, página inicial">
+        <img src="../assets/brand/lockup-horizontal.svg" alt="PJ Park" class="so-claro" width="211" height="60">
+        <img src="../assets/brand/lockup-horizontal-escuro.svg" alt="PJ Park" class="so-escuro" width="211" height="60">
+      </a>
+      <nav class="topo__links" aria-label="Principal">
+        <a href="../baixa-de-empresa/" class="topo__link" aria-current="page">Baixa de empresa</a>
+        <a href="../servicos/" class="topo__link">Serviços adicionais</a>
+        <a href="../faq/" class="topo__link">Perguntas</a>
+      </nav>
+      <div class="topo__acoes">
+        <button class="menu-botao" id="menu-botao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-movel">
+          <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><g fill="currentColor"><rect width="18" height="2" rx="1"/><rect y="6" width="18" height="2" rx="1"/><rect y="12" width="18" height="2" rx="1"/></g></svg>
         </button>
-        <a href="https://app.pjpark.com.br" target="_blank" class="text-sm text-white px-4 py-1.5 rounded-[6px] transition-colors font-medium whitespace-nowrap" style="background:#ff3f6e;" onmouseover="this.style.background='#193044'" onmouseout="this.style.background='#ff3f6e'">Começar →</a>
+        <a href="https://app.pjpark.com.br" class="botao botao--sinal" target="_blank" rel="noopener">Começar</a>
       </div>
     </div>
-    <!-- Mobile menu -->
-    <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5]">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
-        <a href="./" class="text-sm font-medium py-2.5 border-b border-[#F0F0F0]" style="color:#ff3f6e;">Baixa de empresa</a>
-        <a href="../servicos/" class="text-sm text-[#111111] py-2.5 border-b border-[#F0F0F0] hover:opacity-50 transition-opacity">Serviços adicionais</a>
-        <a href="../blog/" class="text-sm text-[#111111] py-2.5 hover:opacity-50 transition-opacity">Blog</a>
+    <div class="menu-movel" id="menu-movel">
+      <div class="faixa-conteudo">
+        <a href="../baixa-de-empresa/">Baixa de empresa</a>
+        <a href="../servicos/">Serviços adicionais</a>
+        <a href="../blog/">Blog</a>
+        <a href="../faq/">Perguntas frequentes</a>
+        <a href="../sobre/">Sobre a PJ Park</a>
+        <a href="../contato/">Contato</a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <main>
 
-    <!-- HERO -->
-    <section class="border-b border-[#E5E5E5]" style="padding-top:80px;padding-bottom:80px;">
-      <div class="container-inner">
-        <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
-          <div>
-            <p class="text-[11px] font-semibold tracking-wide uppercase mb-4" style="color:#ff3f6e;">Baixa de empresa · PJ Park</p>
-            <h1 class="text-[38px] md:text-[48px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#111111] mb-6">
-              Vire essa página e deixe que a gente resolve
-            </h1>
-            <p class="text-[15px] md:text-[17px] leading-[1.7] text-[#555555] mb-8">
-              Tomou a decisão de encerrar definitivamente o seu CNPJ? Sem burocracia, sem estresse. Fazemos uma análise completa de pendências e fechamos sua empresa em prazo recorde.
-            </p>
-            <a href="https://app.pjpark.com.br" target="_blank" class="inline-block text-[14px] text-white px-6 py-3 rounded-[6px] font-semibold transition-colors" style="background:#ff3f6e;" onmouseover="this.style.background='#193044'" onmouseout="this.style.background='#ff3f6e'">Quero fechar minha empresa →</a>
+    <section class="secao">
+      <div class="faixa-conteudo grade grade--2 grade--largo">
+        <div class="pilha pilha-24">
+          <div class="pilha pilha-16">
+            <p class="rotulo">Baixa de empresa</p>
+            <h1>Vire essa página e deixe a gente resolver</h1>
+            <p class="chamada">Decidiu encerrar o CNPJ de vez? A gente levanta as pendências, fecha o preço antes de começar e conduz a baixa junto a todos os órgãos.</p>
           </div>
-          <div style="display:flex;flex-direction:column;gap:16px;">
-            <div class="border border-[#E5E5E5] rounded-xl bg-white p-5" style="display:flex;gap:16px;align-items:flex-start;">
-              <div style="width:32px;height:32px;border-radius:8px;background:#fff0f4;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff3f6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              </div>
-              <div>
-                <div class="text-[14px] font-semibold text-[#111111] mb-1">Análise completa de pendências</div>
-                <div class="text-[13px] leading-[1.6] text-[#555555]">Verificamos débitos fiscais, tributários e previdenciários antes de iniciar o processo de baixa.</div>
-              </div>
+          <div class="acoes">
+            <a href="https://app.pjpark.com.br" class="botao botao--sinal" target="_blank" rel="noopener">Solicitar análise gratuita</a>
+            <a href="#processo" class="botao botao--linha">Ver como funciona</a>
+          </div>
+          <div class="acoes" style="gap:8px;">
+            <span class="etiqueta etiqueta--ok"><i></i>Análise inicial gratuita</span>
+            <span class="etiqueta etiqueta--neutra"><i></i>Preço fechado</span>
+          </div>
+        </div>
+        <div>
+          <img src="../assets/brand/cancela.svg" alt="Cancela de estacionamento" width="240" height="240" style="width:100%;max-width:220px;margin-inline:auto;display:block;" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <div class="borda-asfalto" role="presentation"></div>
+
+    <section class="secao">
+      <div class="faixa-conteudo grade grade--2 grade--largo" style="align-items:start;">
+        <div class="pilha pilha-16">
+          <p class="rotulo">Por que é difícil</p>
+          <h2>Encerrar uma empresa é mais burocrático do que abrir</h2>
+          <p class="texto-apoio">Cada item abaixo tem prazo, custo e um órgão diferente do outro. É por isso que tanta gente desiste no meio e simplesmente abandona o CNPJ.</p>
+        </div>
+        <div class="grade grade--2" style="gap:24px;">
+          <div class="pilha pilha-12">
+            <h3>O que precisa ser resolvido</h3>
+            <ul class="lista">
+              <li>Distrato social</li>
+              <li>Débitos previdenciários</li>
+              <li>FGTS</li>
+              <li>Tributos federais</li>
+              <li>Junta Comercial</li>
+              <li>Declarações em atraso</li>
+            </ul>
+          </div>
+          <div class="pilha pilha-12">
+            <h3>Riscos de abandonar</h3>
+            <ul class="lista">
+              <li>Multas de R$ 50 a R$ 6.000 por declaração</li>
+              <li>CNPJ inadimplente na Receita Federal</li>
+              <li>Dificuldade em financiamentos</li>
+              <li>Score baixo no CPF do sócio</li>
+              <li>Bloqueio do seguro-desemprego</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="processo">
+      <div class="faixa-conteudo pilha pilha-40">
+        <div class="pilha pilha-16">
+          <p class="rotulo">Como funciona</p>
+          <h2 class="limite-titulo">Da análise à baixa registrada</h2>
+        </div>
+        <div class="grade grade--4">
+          <div class="passo">
+            <span class="passo__numero dado">01</span>
+            <div class="pilha pilha-8">
+              <h3>Análise</h3>
+              <p class="texto-apoio">Levantamos débitos fiscais, previdenciários e declarações em atraso. Essa etapa é gratuita e sem compromisso.</p>
             </div>
-            <div class="border border-[#E5E5E5] rounded-xl bg-white p-5" style="display:flex;gap:16px;align-items:flex-start;">
-              <div style="width:32px;height:32px;border-radius:8px;background:#fff0f4;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff3f6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              </div>
-              <div>
-                <div class="text-[14px] font-semibold text-[#111111] mb-1">100% transparente pelo app</div>
-                <div class="text-[13px] leading-[1.6] text-[#555555]">Acompanhe cada etapa do processo diretamente na plataforma. Nada acontece sem você saber.</div>
-              </div>
+          </div>
+          <div class="passo">
+            <span class="passo__numero dado">02</span>
+            <div class="pilha pilha-8">
+              <h3>Preço fechado</h3>
+              <p class="texto-apoio">Você recebe um valor único para todo o processo, com o que está incluso e o que fica por fora.</p>
             </div>
-            <div class="border border-[#E5E5E5] rounded-xl bg-white p-5" style="display:flex;gap:16px;align-items:flex-start;">
-              <div style="width:32px;height:32px;border-radius:8px;background:#fff0f4;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff3f6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <div class="text-[14px] font-semibold text-[#111111] mb-1">Fechamento em prazo recorde</div>
-                <div class="text-[13px] leading-[1.6] text-[#555555]">Com seu certificado digital em mãos, agilizamos ao máximo o encerramento junto aos órgãos competentes.</div>
-              </div>
+          </div>
+          <div class="passo">
+            <span class="passo__numero dado">03</span>
+            <div class="pilha pilha-8">
+              <h3>Regularização</h3>
+              <p class="texto-apoio">Colocamos as pendências em dia. Se você preferir seguir sem regularizar, assinamos um termo de responsabilidade.</p>
+            </div>
+          </div>
+          <div class="passo">
+            <span class="passo__numero dado">04</span>
+            <div class="pilha pilha-8">
+              <h3>Baixa</h3>
+              <p class="texto-apoio">Distrato, Junta Comercial, Receita, estado e município. Cada etapa aparece no app com o comprovante.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY SO HARD -->
-    <section class="border-b border-[#E5E5E5]" style="padding-top:80px;padding-bottom:80px;background:#f0f4f8;">
-      <div class="container-inner">
-        <div style="text-align:center;margin-bottom:48px;">
-          <p class="text-[11px] font-semibold tracking-wide uppercase mb-3" style="color:#ff3f6e;">Por que é difícil</p>
-          <h2 class="text-[26px] md:text-[38px] font-bold leading-[1.15] tracking-tight text-[#111111]" style="max-width:560px;margin:0 auto;">
-            Encerrar uma empresa é mais difícil do que abrir
-          </h2>
+    <section class="secao">
+      <div class="faixa-conteudo grade grade--3">
+        <div class="cartao">
+          <h3>O que você precisa ter</h3>
+          <p class="texto-apoio">Certificado digital da empresa e documentos societários. Se não tiver certificado, a gente emite para você.</p>
         </div>
-        <div class="three-col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-          <div class="border border-[#E5E5E5] rounded-xl bg-white p-6">
-            <h3 class="text-[15px] font-semibold text-[#111111] mb-3">O que você precisa resolver</h3>
-            <ul class="space-y-2">
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Distrato Social</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Débitos previdenciários</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>FGTS</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Tributos federais</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Junta Comercial</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Declarações em atraso</li>
-            </ul>
-          </div>
-          <div class="border border-[#E5E5E5] rounded-xl bg-white p-6">
-            <h3 class="text-[15px] font-semibold text-[#111111] mb-3">Riscos de abandonar sem fechar</h3>
-            <ul class="space-y-2">
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Multas de R$ 50 a R$ 6.000 por declaração</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>CNPJ inadimplente na Receita Federal</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Dificuldade em financiamentos</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Score baixo no CPF do sócio</li>
-              <li class="flex gap-2 text-[13px] text-[#555555]"><span style="color:#ff3f6e;font-weight:700;flex-shrink:0;">·</span>Bloqueio do seguro-desemprego</li>
-            </ul>
-          </div>
-          <div class="border border-[#E5E5E5] rounded-xl bg-white p-6" style="background:#193044;border-color:#193044;">
-            <h3 class="text-[15px] font-semibold text-white mb-3">A solução PJ Park</h3>
-            <p class="text-[13px] leading-[1.7] mb-4" style="color:#c7cbcf;">Cuidamos de todo o processo de encerramento. Você nos passa o certificado digital e a gente cuida do restante.</p>
-            <a href="https://app.pjpark.com.br" target="_blank" class="inline-block text-[13px] font-semibold px-4 py-2 rounded-[6px]" style="background:#ff3f6e;color:white;">Iniciar processo →</a>
-          </div>
+        <div class="cartao">
+          <h3>Quanto custa</h3>
+          <p class="texto-apoio">O preço sai depois da análise e vale para o processo inteiro. Nada de cobrança por etapa no meio do caminho.</p>
+        </div>
+        <div class="cartao">
+          <h3>Ainda na dúvida</h3>
+          <p class="texto-apoio">Dá para estacionar a empresa por R$ 69,90/mês enquanto você decide, e pedir a baixa depois.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section style="padding-top:80px;padding-bottom:80px;background:#193044;">
-      <div class="container-inner" style="text-align:center;">
-        <h2 class="text-[26px] md:text-[32px] font-bold leading-[1.15] tracking-tight text-white mb-4">
-          Pronto para virar essa página?
-        </h2>
-        <p class="text-[15px] leading-[1.7] mb-8" style="color:#c7cbcf;max-width:400px;margin-left:auto;margin-right:auto;">
-          Entre em contato e solicite uma análise inicial gratuita da situação do seu CNPJ.
-        </p>
-        <a href="https://app.pjpark.com.br" target="_blank"
-           class="inline-block text-[14px] font-semibold px-6 py-3 rounded-[6px] transition-colors text-white"
-           style="background:#ff3f6e;"
-           onmouseover="this.style.background='#2b4153'" onmouseout="this.style.background='#ff3f6e'">
-          Quero fechar minha empresa →
-        </a>
-        <div class="mt-4">
-          <a href="../" class="inline-flex items-center gap-2 text-[13px] font-medium hover:opacity-70 transition-opacity" style="color:#c7cbcf;">← Voltar para PJ Park</a>
+    <section class="secao secao--escura">
+      <div class="faixa-conteudo pilha pilha-24 centro" style="max-width:620px;">
+        <h2>Pronto para virar essa página?</h2>
+        <p class="texto-apoio centro">Peça a análise da situação do seu CNPJ. Gratuita, sem compromisso, e o resultado é seu mesmo que você siga com outro escritório.</p>
+        <div class="acoes" style="justify-content:center;">
+          <a href="https://app.pjpark.com.br" class="botao botao--sinal" target="_blank" rel="noopener">Quero fechar minha empresa</a>
+          <a href="../" class="botao botao--linha">Voltar para a home</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-[#E5E5E5]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-14">
-      <div class="flex flex-col md:flex-row gap-16">
-        <div>
-          <a href="https://setbox.com.br" target="_blank"><img src="../assets/setbox-lateral.png" alt="Setbox" class="h-6 w-auto mb-5" width="1405" height="466"></a>
-          <p class="text-[12px] text-[#BBBBBB] mb-1">© 2026 Setbox Serviços Digitais</p>
-          <p class="text-[12px] text-[#BBBBBB]">Rua João Bettega, 649 - Sala 3A<br>Curitiba / PR</p>
-        </div>
-        <div>
-          <p class="text-[11px] font-semibold tracking-wide uppercase mb-3" style="color:#888888;">Empresa</p>
-          <div class="flex flex-col gap-2">
-            <a href="../faq/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Perguntas frequentes</a>
-            <a href="../termos-de-uso/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Termos de Uso</a>
-            <a href="../politica-de-privacidade/" class="text-[13px] text-[#BBBBBB] hover:opacity-70 transition-opacity">Política de Privacidade</a>
-          </div>
-        </div>
+  <footer class="rodape">
+    <div class="faixa-conteudo rodape__grade">
+      <div class="rodape__marca">
+        <img src="../assets/brand/lockup-horizontal.svg" alt="PJ Park" class="so-claro" width="211" height="60">
+        <img src="../assets/brand/lockup-horizontal-escuro.svg" alt="PJ Park" class="so-escuro" width="211" height="60">
+        <p class="rodape__miudo">Escritório online para empresas inativas.<br>pjpark.com.br</p>
+      </div>
+      <div class="rodape__coluna">
+        <h4>PJ Park</h4>
+        <a href="../sobre/">Sobre a PJ Park</a>
+        <a href="../contato/">Contato</a>
+        <a href="../blog/">Blog</a>
+      </div>
+      <div class="rodape__coluna">
+        <h4>Produto</h4>
+        <a href="../baixa-de-empresa/">Baixa de empresa</a>
+        <a href="../servicos/">Serviços adicionais</a>
+        <a href="../faq/">Perguntas frequentes</a>
+      </div>
+      <div class="rodape__coluna">
+        <h4>Empresa</h4>
+        <a href="../termos-de-uso/">Termos de Uso</a>
+        <a href="../politica-de-privacidade/">Política de Privacidade</a>
+        <a href="mailto:contato@pjpark.com.br">contato@pjpark.com.br</a>
+      </div>
+    </div>
+    <div class="faixa-conteudo" style="margin-top:36px;">
+      <div class="faixa" role="presentation"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;margin-top:20px;">
+        <a href="https://setbox.com.br" target="_blank" rel="noopener" class="rodape__setbox" aria-label="Setbox">
+          <img src="../assets/setbox-lateral.png" alt="Setbox" width="1405" height="466">
+        </a>
+        <p class="rodape__miudo">© 2026 Setbox Serviços Digitais<span class="ponto" aria-hidden="true">·</span>CNPJ 08.889.601/0001-09<br>Av. Carneiro Leão, 563 - Zona 01, Maringá / PR - 87014-010</p>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-      var menu = document.getElementById('nav-menu');
-      menu.classList.toggle('hidden');
-      this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
-    });
+    (function () {
+      var botao = document.getElementById('menu-botao');
+      var menu = document.getElementById('menu-movel');
+      botao.addEventListener('click', function () {
+        var aberto = menu.getAttribute('data-aberto') === 'true';
+        menu.setAttribute('data-aberto', String(!aberto));
+        botao.setAttribute('aria-expanded', String(!aberto));
+      });
+    })();
   </script>
 </body>
 </html>
