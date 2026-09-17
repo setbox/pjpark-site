@@ -17,6 +17,7 @@
   --atencao: #F5B301;
   --erro: #D14B3D;
   --sombra-foco: #F5B301;
+  --altura-topo: 64px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,7 +38,13 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  /* O topo é fixo: sem isto toda âncora para atrás dele. Os 12px extras
+     são a borda de asfalto, que abre a seção e não pode ficar escondida. */
+  scroll-padding-top: calc(var(--altura-topo) + 12px);
+}
 
 body {
   margin: 0;
@@ -82,15 +89,59 @@ a { color: inherit; }
 .secao--escura .rotulo { color: var(--sinal); }
 .secao--escura .texto-apoio { color: #9AA2AD; }
 
-/* capa da home: titulo grande à esquerda, apoio à direita */
-.secao--capa { padding-block: clamp(72px, 11vw, 136px); }
+/* capa da home: titulo grande à esquerda, apoio à direita.
+   Ocupa a tela inteira menos o topo fixo, para que o preço fique sempre
+   abaixo da linha de corte - em monitor alto ou baixo. Em tela curta o
+   min-height cede para o conteúdo, que nunca é cortado. */
+.secao--capa { padding-block: clamp(40px, 6vw, 80px); }
+
+/* Capa que ocupa a tela inteira menos o topo fixo: o que vem depois -
+   preço, prova, processo - fica sempre abaixo da linha de corte, em
+   monitor alto ou baixo. Em tela curta o min-height cede e o conteúdo
+   empurra, nunca é cortado. */
+.secao--capa,
+.secao--dobra {
+  /* Desconta o topo fixo e a borda de asfalto: a faixa amarela fecha a
+     dobra em vez de passar despercebida atrás do cabeçalho. */
+  min-height: calc(100vh - var(--altura-topo) - 12px);
+  min-height: calc(100svh - var(--altura-topo) - 12px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* O miolo flutua no centro e o que vier depois (a dica de rolagem) fica
+   colado embaixo: em monitor alto isso evita o texto no meio do vazio.
+   O `width: 100%` é obrigatório: `margin-inline: auto` da faixa encolhe
+   o item flex ao tamanho do conteúdo e joga tudo para o meio da tela. */
+.secao--capa > *,
+.secao--dobra > * { width: 100%; }
+
+.secao--capa > .capa,
+.secao--dobra > .faixa-conteudo:first-child { margin-block: auto; }
 
 .capa {
   display: grid;
   gap: 36px;
 }
 
-.capa__titulo h1 { font-size: clamp(38px, 6.4vw, 66px); }
+/* Pin da capa: cortado pela borda da tela, para ler como sinalização de
+   rua e não como o logotipo repetido em tamanho grande. No celular não há
+   coluna sobrando, então ele desce para o canto, ainda cortado. */
+.capa__pin {
+  --pin: 40vw;
+  position: absolute;
+  z-index: 0;
+  right: calc(var(--pin) * -0.22);
+  bottom: 6%;
+  height: var(--pin);
+  width: auto;
+  pointer-events: none;
+}
+
+.secao--capa { position: relative; overflow: hidden; }
+.secao--capa > .faixa-conteudo { position: relative; z-index: 1; }
+
+.capa__titulo h1 { font-size: clamp(38px, 6.4vw, 72px); }
 
 .capa__apoio {
   display: flex;
@@ -100,14 +151,61 @@ a { color: inherit; }
 
 .capa__apoio .chamada { max-width: 42ch; }
 
+/* Dica de rolagem: o preço mora logo abaixo da dobra, e sem um sinal a
+   capa parece a página inteira. */
+.capa__rolagem {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  font-family: "Overpass Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--asfalto);
+  text-decoration: none;
+}
+
+.capa__rolagem:hover { color: var(--ink); }
+
+.capa__rolagem svg { animation: desce 2.4s ease-in-out infinite; }
+
+@keyframes desce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .capa__rolagem svg { animation: none; }
+}
+
 @media (min-width: 900px) {
+  /* Texto na coluna da esquerda; a da direita é o espaço que o pin ocupa. */
   .capa {
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(40px, 6vw, 88px);
-    align-items: center;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 28px;
+    align-items: start;
   }
+  .capa__titulo,
+  .capa__apoio { grid-column: 1; }
   .capa__titulo h1 { max-width: 13ch; }
+  .capa__apoio { gap: 26px; }
   .capa__apoio .chamada { max-width: 46ch; }
+
+  /* O corte é proporcional ao próprio pin: um pedaço fixo dele sempre sai
+     da tela, em qualquer monitor. Sem isso ele encolhe até virar um
+     logotipo grande centrado na coluna. */
+  .capa__pin {
+    /* Maior que a dobra e ancorado embaixo: a ponta fica visível, o topo
+       é cortado pelo cabeçalho e a lateral pela borda da tela. É o corte
+       que faz ler como placa de rua em vez de logotipo grande. */
+    height: 112%;
+    right: -20%;
+    top: auto;
+    bottom: 3%;
+    translate: none;
+  }
 }
 
 /* ---------- tipografia ---------- */
@@ -197,7 +295,7 @@ p { margin: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  height: 64px;
+  height: var(--altura-topo);
 }
 
 .topo__marca { display: flex; align-items: center; }

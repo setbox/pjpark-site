@@ -57,6 +57,9 @@ Três colunas (marca, Produto, Empresa), faixa tracejada e a linha com o logo Se
 |---|---|
 | `.faixa-conteudo` | Wrapper de largura máxima (1080px) e gutter |
 | `.secao`, `.secao--curta`, `.secao--escura` | Blocos verticais; `--escura` é a faixa grafite |
+| `.secao--capa`, `.secao--dobra` | Primeira seção da página: ocupa a tela menos o topo (64px), empurrando o resto para baixo da dobra. `--capa` é a da home (título + apoio); `--dobra` é a das internas. Filho direto precisa de `width: 100%`, senão o `margin-inline: auto` da faixa encolhe o item flex |
+| `.capa__rolagem` | Dica de rolagem colada no rodapé da capa da home, apontando para o preço |
+| `.capa__pin` | Pin grande da home, cortado pelo topo e pela borda direita, ponta visível. Medidas em % da dobra (`height: 112%`, `right: -20%`), nunca fixas - com valor fixo ele vira logotipo grande centrado. No celular desce para o canto inferior. Usa a versão secundária (corpo asfalto), não a amarela: em amarelo briga com o CTA do cabeçalho |
 | `.borda-asfalto` | Divisor de asfalto com faixa amarela. **Uma por página** |
 | `.faixa` | Faixa tracejada fina (rodapé, divisores) |
 | `.rotulo` | Label de seção em mono, caixa alta |

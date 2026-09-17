@@ -51,6 +51,11 @@ Estado (separado da marca): `--ok #2FA36B`, `--atencao #F5B301`, `--erro #D14B3D
 - **Elevação:** nenhuma. Separação por linha de 1px e por fundo, nunca por sombra.
 - **Largura:** `.faixa-conteudo` em 1080px, gutter de 20px (32px acima de 768px).
 - **Seção:** `padding-block: clamp(56px, 8vw, 96px)`.
+- **Capa:** a primeira seção de cada página ocupa a tela inteira menos o topo fixo
+  (`min-height: calc(100svh - var(--altura-topo))`, com `100vh` de reserva). O que vem depois -
+  preço, prova, processo - fica sempre abaixo da linha de corte, em monitor alto ou baixo. O miolo
+  flutua no centro (`margin-block: auto`) e o conteúdo nunca é cortado: em tela curta o
+  `min-height` cede.
 - **Foco:** `outline: 2px solid var(--sinal)` com `outline-offset: 2px`. Obrigatório.
 
 ---
@@ -67,6 +72,21 @@ Estado (separado da marca): `--ok #2FA36B`, `--atencao #F5B301`, `--erro #D14B3D
 | Compartilhamento | `og-image.png` (1200x630) |
 
 Regras: margem livre de meia largura do pin; nunca girar, inclinar ou aplicar sombra; nunca escrever o nome em amarelo; abaixo de 120px de largura, usar só o símbolo.
+
+---
+
+## Pin na capa
+
+O símbolo aparece **uma vez por página**, grande, cortado em três lados: topo pelo cabeçalho,
+lateral pela borda da tela, e com a ponta visível logo acima da faixa de asfalto. Tamanho e recuo
+são percentuais da própria dobra (`height: 112%`, `right: -20%`, `bottom: 3%`), nunca valores
+fixos - assim o corte é o mesmo em monitor alto ou baixo, e ele não vira um logotipo grande
+centrado na coluna.
+
+Nesse tamanho vale a **versão secundária** (`lane-pin-secundaria`: corpo asfalto `#6B7380`, marcas
+em `#F5B301`). Em amarelo cheio ele disputa atenção com o CTA do cabeçalho, e numa tela só pode
+haver um amarelo mandando. O lockup pequeno do cabeçalho continua sendo a marca; este é
+sinalização.
 
 ---
 
