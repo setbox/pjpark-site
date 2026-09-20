@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pjpark.com.br/sitemap.xml
