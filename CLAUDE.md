@@ -25,7 +25,7 @@ Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.
 | `assets/brand/cancela.svg`, `vaga.svg`, `placa-p.svg`, `faixa-*.svg`, `hachura-diagonal.svg` | Elementos auxiliares |
 | `assets/favicon*`, `icon.svg`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` | Favicons gerados do símbolo sólido |
 | `assets/og-image.png` | Open Graph 1200x630, fundo grafite com lockup |
-| `assets/setbox-lateral.png` | Logo Setbox do rodapé |
+| `assets/setbox-lockup.svg` | Logo Setbox do rodapé |
 
 Regenerar favicon ou OG: os fontes estão na base de conhecimento, comando em `DESIGN.md`.
 
@@ -79,7 +79,7 @@ Três colunas (marca, Produto, Empresa), faixa tracejada e a linha com o logo Se
 - Sem ponto final em título ou subtítulo (h1-h6)
 - Nunca usar travessão - use hífen ou vírgula
 - CTAs do app: `https://app.pjpark.com.br`
-- E-mail de contato: `contato@pjpark.com.br`
+- E-mail de contato: `contato@setbox.com.br`
 - Domínio: `pjpark.com.br`
 - **Não prometer o que o produto não faz.** Reativação é **assistida**, não "1 clique". Não usar "o primeiro" nem número de clientes sem lastro.
 - Deixar explícito que a PJ Park não é escritório de contabilidade e que o ato contábil é de escritório parceiro com CRC ativo
