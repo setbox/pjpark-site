@@ -43,7 +43,7 @@ Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Ordem: `[l
 
 Página ativa: `aria-current="page"` no `.topo__link` - o CSS desenha o traço amarelo embaixo. Nunca marcar com cor inline.
 
-CTA `Começar` aponta para `https://app.pjpark.com.br/register`, na mesma aba, e usa `.botao .botao--sinal`. `Entrar` é para quem já tem conta (cliente e parceiro, o login é o mesmo): link de texto `.topo__link .topo__entrar` apontando para a raiz do app, visível só no desktop; no celular é o último item do menu móvel (`.menu-movel__entrar`), e o rodapé repete na coluna Produto.
+CTA `Começar` aponta para `https://app.pjpark.com.br/register`, na mesma aba, e usa `.botao .botao--sinal`. `Entrar` é para quem já tem conta (cliente e parceiro, o login é o mesmo): botão fantasma `.botao .botao--fantasma .topo__entrar` (sem caixa em repouso, caixa no hover) apontando para a raiz do app, visível só no desktop; no celular é o último item do menu móvel (`.menu-movel__entrar`), e o rodapé repete na coluna Produto.
 
 Menu mobile: `#menu-movel` com `data-aberto="true|false"`, alternado pelo script no fim da página.
 
