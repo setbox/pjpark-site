@@ -39,11 +39,11 @@ Regenerar favicon ou OG: os fontes estão na base de conhecimento, comando em `D
 
 ## Nav
 
-Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Ordem: `[lockup]` | Baixa de empresa | Serviços adicionais | Blog | Perguntas | Contato | `[Começar]`.
+Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Ordem: `[lockup]` | Baixa de empresa | Serviços adicionais | Blog | Perguntas | Contato | Entrar | `[Começar]`.
 
 Página ativa: `aria-current="page"` no `.topo__link` - o CSS desenha o traço amarelo embaixo. Nunca marcar com cor inline.
 
-CTA `Começar` aponta para `https://app.pjpark.com.br` e usa `.botao .botao--sinal`.
+CTA `Começar` aponta para `https://app.pjpark.com.br/register`, na mesma aba, e usa `.botao .botao--sinal`. `Entrar` é para quem já tem conta (cliente e parceiro, o login é o mesmo): link de texto `.topo__link .topo__entrar` apontando para a raiz do app, visível só no desktop; no celular é o último item do menu móvel (`.menu-movel__entrar`), e o rodapé repete na coluna Produto.
 
 Menu mobile: `#menu-movel` com `data-aberto="true|false"`, alternado pelo script no fim da página.
 
@@ -78,7 +78,7 @@ Três colunas (marca, Produto, Empresa), faixa tracejada e a linha com o logo Se
 - Português do Brasil
 - Sem ponto final em título ou subtítulo (h1-h6)
 - Nunca usar travessão - use hífen ou vírgula
-- CTAs do app: `https://app.pjpark.com.br`
+- CTAs de conversão: `https://app.pjpark.com.br/register`. Acesso de quem já tem conta (Entrar, Acessar a plataforma): `https://app.pjpark.com.br`, que leva ao painel se já houver sessão e ao login se não
 - E-mail de contato: `contato@setbox.com.br`
 - Domínio: `pjpark.com.br`
 - **Não prometer o que o produto não faz.** Reativação é **assistida**, não "1 clique". Não usar "o primeiro" nem número de clientes sem lastro.

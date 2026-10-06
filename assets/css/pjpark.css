@@ -320,6 +320,10 @@ p { margin: 0; }
 
 .topo__acoes { display: flex; align-items: center; gap: 10px; }
 
+/* Entrar fica na barra só no desktop; no celular vai no fim do menu */
+.topo__entrar { display: none; margin-right: 14px; }
+@media (min-width: 900px) { .topo__entrar { display: inline-block; } }
+
 .menu-botao {
   display: inline-flex;
   align-items: center;
@@ -345,6 +349,7 @@ p { margin: 0; }
   border-bottom: 1px solid var(--line);
 }
 .menu-movel a:last-child { border-bottom: none; }
+.menu-movel a.menu-movel__entrar { font-weight: 600; }
 
 /* ---------- botoes ---------- */
 
