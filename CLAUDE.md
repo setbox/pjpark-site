@@ -12,7 +12,7 @@ Multi-page static site for **PJ Park** (pjpark.com.br) - escritório online para
 
 Pages: `index` (home), `baixa-de-empresa/`, `servicos/`, `faq/`, `contato/`, `blog/`, `blog/devo-inativar-minha-empresa/`, `termos-de-uso/`, `politica-de-privacidade/`.
 
-Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.md`; the source of truth for the brand lives in the knowledge base at `setbox/produtos/pjpark/base_conhecimento/DESIGN.md`, with the master assets in `base_conhecimento/assets/marca/`.
+Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.md`; the source of truth for the brand lives in the knowledge base at `~/obsidian/setbox/divisoes/pjpark/DESIGN.md`, with the master assets in `~/obsidian/setbox/divisoes/pjpark/assets/marca/`.
 
 ## Assets
 
