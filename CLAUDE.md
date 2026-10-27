@@ -10,7 +10,7 @@ No build step, no framework, no CDN framework. Open any `.html` directly or serv
 
 Multi-page static site for **PJ Park** (pjpark.com.br) - escritório online para empresas inativas, marca da Setbox Serviços Digitais.
 
-Pages: `index` (home), `baixa-de-empresa/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 20 posts em `blog/<slug>/`, `termos-de-uso/`, `politica-de-privacidade/`.
+Pages: `index` (home), `baixa-de-empresa/`, `regularizar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 20 posts em `blog/<slug>/`, `termos-de-uso/`, `politica-de-privacidade/`.
 
 Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.md`; the source of truth for the brand lives in the knowledge base at `~/obsidian/setbox/divisoes/pjpark/DESIGN.md`, with the master assets in `~/obsidian/setbox/divisoes/pjpark/assets/marca/`.
 
@@ -35,12 +35,12 @@ Regenerar favicon ou OG: os fontes estão na base de conhecimento, comando em `D
 | Arquivo | Prefixo |
 |---|---|
 | `index.html` | `assets/` |
-| `baixa-de-empresa/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/`, `termos-de-uso/`, `politica-de-privacidade/` | `../assets/` |
+| `baixa-de-empresa/`, `regularizar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/`, `termos-de-uso/`, `politica-de-privacidade/` | `../assets/` |
 | `blog/<slug>/` | `../../assets/` |
 
 ## Nav
 
-Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Desktop, de propósito com 3 links e uma ação só: `[lockup]` | Baixa de empresa | Serviços adicionais | Perguntas | `[Começar]`. Blog, Sobre e Contato ficam no menu móvel e no rodapé. Não há Entrar no cabeçalho: o cadastro do app já tem "Já tem conta? Entrar", e cliente raramente passa pelo site.
+Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Desktop com 4 links e uma ação só, na ordem da jornada: `[lockup]` | Regularizar CNPJ | Baixa de empresa | Serviços adicionais | Perguntas | `[Começar]`. Menu móvel e rodapé seguem a mesma ordem. Blog, Sobre e Contato ficam no menu móvel e no rodapé. Não há Entrar no cabeçalho: o cadastro do app já tem "Já tem conta? Entrar", e cliente raramente passa pelo site.
 
 Página ativa: `aria-current="page"` no `.topo__link` (traço amarelo embaixo) e no link correspondente do `#menu-movel` (traço amarelo à esquerda). Posts marcam Blog no menu móvel. Nunca marcar com cor inline.
 
@@ -100,3 +100,7 @@ Quatro colunas (marca, PJ Park, Produto, Empresa), com títulos em `<h2 class="r
 ## SEO
 
 Toda página: `meta[description]`, `link[canonical]`, Open Graph (`og:type/site_name/locale/url/title/description/image`) e Twitter card `summary_large_image`. OG image: `assets/og-image.png`. `og:site_name` = "PJ Park".
+
+Dados estruturados (JSON-LD, `<script type="application/ld+json">` no fim do `<head>`): home com Organization + WebSite + Service dos planos; baixa e regularizar com Service (+ FAQPage na regularizar); serviços com OfferCatalog; FAQ com FAQPage (texto igual ao visível); posts com BlogPosting + BreadcrumbList, `og:type` article e `article:published_time`/`modified_time`. Ao mudar preço, pergunta da FAQ ou data de post, atualizar o JSON-LD junto. `llms.txt` na raiz resume o site para buscadores de IA.
+
+Posts: começam com um parágrafo **Resposta curta:** quando o título é uma pergunta de intenção de compra, e terminam com a seção **Fontes** (links oficiais gov.br/Planalto, nova aba). Afirmação fiscal sem fonte não entra: nada de faixa de multa, score ou obrigação extinta (GFIP).

@@ -29,6 +29,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/pjpark.css">
   <script defer src="assets/js/pjpark.js"></script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://pjpark.com.br/#org",
+        "name": "PJ Park",
+        "url": "https://pjpark.com.br/",
+        "logo": "https://pjpark.com.br/assets/icon-512.png",
+        "image": "https://pjpark.com.br/assets/og-image.png",
+        "description": "Escritório online para empresas inativas: mantém o CNPJ parado regular, regulariza pendências e conduz a baixa. A PJ Park não é escritório de contabilidade: os atos contábeis são executados por escritório parceiro com CRC ativo.",
+        "email": "contato@setbox.com.br",
+        "foundingDate": "2020",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Brasil"
+        },
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Setbox Serviços Digitais",
+          "url": "https://setbox.com.br/",
+          "taxID": "08.889.601/0001-09",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Carneiro Leão, 563 - Zona 01",
+            "addressLocality": "Maringá",
+            "addressRegion": "PR",
+            "postalCode": "87014-010",
+            "addressCountry": "BR"
+          }
+        },
+        "knowsAbout": [
+          "empresa inativa",
+          "CNPJ parado",
+          "baixa de CNPJ",
+          "regularização de CNPJ",
+          "CNPJ inapto",
+          "obrigações acessórias"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://pjpark.com.br/#site",
+        "url": "https://pjpark.com.br/",
+        "name": "PJ Park",
+        "inLanguage": "pt-BR",
+        "publisher": {
+          "@id": "https://pjpark.com.br/#org"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://pjpark.com.br/#estacionamento",
+        "name": "Estacionamento de CNPJ",
+        "serviceType": "Manutenção de empresa inativa",
+        "description": "Mantém a empresa sem movimento regular, com as obrigações acessórias do regime entregues e os comprovantes no app, enquanto o sócio decide se volta a operar ou encerra.",
+        "provider": {
+          "@id": "https://pjpark.com.br/#org"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Brasil"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Plano mensal",
+            "price": "69.90",
+            "priceCurrency": "BRL",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "69.90",
+              "priceCurrency": "BRL",
+              "unitCode": "MON"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Plano anual",
+            "price": "699.00",
+            "priceCurrency": "BRL",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "699.00",
+              "priceCurrency": "BRL",
+              "unitCode": "ANN"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -41,6 +135,7 @@
         <img src="assets/brand/lockup-horizontal-escuro.svg" alt="PJ Park" class="so-escuro" width="211" height="60">
       </a>
       <nav class="topo__links" aria-label="Principal">
+        <a href="regularizar-cnpj/" class="topo__link">Regularizar CNPJ</a>
         <a href="baixa-de-empresa/" class="topo__link">Baixa de empresa</a>
         <a href="servicos/" class="topo__link">Serviços adicionais</a>
         <a href="faq/" class="topo__link">Perguntas</a>
@@ -55,6 +150,7 @@
     </div>
     <div class="menu-movel" id="menu-movel">
       <div class="faixa-conteudo">
+        <a href="regularizar-cnpj/">Regularizar CNPJ</a>
         <a href="baixa-de-empresa/">Baixa de empresa</a>
         <a href="servicos/">Serviços adicionais</a>
         <a href="blog/">Blog</a>
@@ -119,7 +215,7 @@
           <a href="https://app.pjpark.com.br/register" class="botao botao--sinal">Começar agora</a>
         </div>
         <ul class="lista" id="incluso">
-          <li>Declarações acessórias entregues no prazo: GFIP, DCTF, PGDAS, DEFIS e SINTEGRA/EFD, conforme o regime da empresa</li>
+          <li>Declarações acessórias entregues no prazo, como PGDAS-D, DEFIS, DCTFWeb e SINTEGRA/EFD, conforme o regime da empresa</li>
           <li>Acompanhamento da regularidade do CNPJ e emissão de certidões</li>
           <li>Baixa pedida direto pelo app, sem o dossiê de R$ 69,90, se você decidir encerrar</li>
           <li>Reativação assistida quando você quiser voltar a operar</li>
@@ -182,7 +278,10 @@
           <h2>Abandonar o CNPJ sai caro</h2>
           <p class="texto-apoio">Parar as atividades é comum. O que quase ninguém conta é que o CNPJ continua existindo para a Receita: as declarações continuam vencendo e as multas correm em silêncio.</p>
           <p class="texto-apoio">Encerrar formalmente custa tempo e dinheiro. Manter contabilidade tradicional para uma empresa que não fatura custa mais ainda. A PJ Park fica no meio do caminho.</p>
-          <a href="baixa-de-empresa/" class="link-seta">Quero encerrar de vez</a>
+          <div class="acoes">
+            <a href="regularizar-cnpj/" class="link-seta">Quero regularizar</a>
+            <a href="baixa-de-empresa/" class="link-seta">Quero encerrar de vez</a>
+          </div>
         </div>
         <div class="pilha pilha-12">
           <div class="cartao">
@@ -190,7 +289,7 @@
               <h3>CNPJ abandonado há dois anos</h3>
               <span class="etiqueta etiqueta--erro"><i></i>Irregular</span>
             </div>
-            <p class="texto-apoio">Multas de R$ 50 a R$ 6.000 por declaração não entregue, acumuladas mês a mês.</p>
+            <p class="texto-apoio">Multa por declaração não entregue, que varia conforme a obrigação e se acumula a cada competência perdida.</p>
           </div>
           <div class="cartao">
             <div class="servico__topo">
@@ -201,10 +300,10 @@
           </div>
           <div class="cartao">
             <div class="servico__topo">
-              <h3>CPF do sócio comprometido</h3>
+              <h3>Sócio na conta</h3>
               <span class="etiqueta etiqueta--erro"><i></i>Bloqueado</span>
             </div>
-            <p class="texto-apoio">Score, financiamento e até o seguro-desemprego entram na conta da empresa irregular.</p>
+            <p class="texto-apoio">Dívida inscrita em dívida ativa pode virar protesto e cobrança no nome dos sócios, com reflexo em crédito, financiamento e até no seguro-desemprego.</p>
           </div>
         </div>
       </div>
@@ -219,7 +318,7 @@
         <div class="grade grade--3">
           <div class="cartao">
             <h3>Declarações acessórias</h3>
-            <p class="texto-apoio">GFIP, DCTF, PGDAS, DEFIS, SINTEGRA/EFD e baixa de movimento, conforme o regime da sua empresa.</p>
+            <p class="texto-apoio">PGDAS-D, DEFIS, DCTFWeb, SINTEGRA/EFD e baixa de movimento, conforme o regime da sua empresa.</p>
           </div>
           <div class="cartao">
             <h3>Regularidade acompanhada</h3>
@@ -313,6 +412,7 @@
       </div>
       <div class="rodape__coluna">
         <h2 class="rodape__titulo">Produto</h2>
+        <a href="regularizar-cnpj/">Regularizar CNPJ</a>
         <a href="baixa-de-empresa/">Baixa de empresa</a>
         <a href="servicos/">Serviços adicionais</a>
         <a href="faq/">Perguntas frequentes</a>

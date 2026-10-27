@@ -1,0 +1,23 @@
+# PJ Park
+
+> Escritório online para empresas inativas no Brasil. Mantém o CNPJ parado regular (R$ 69,90 por mês ou R$ 699,00 por ano, sem fidelidade), regulariza pendências e conduz a baixa do CNPJ. Produto da Setbox Serviços Digitais (CNPJ 08.889.601/0001-09). A PJ Park não é escritório de contabilidade: os atos contábeis são executados por escritório parceiro com CRC ativo.
+
+## Serviços
+
+- [Estacionar CNPJ](https://pjpark.com.br/): empresa sem movimento com as obrigações acessórias entregues e os comprovantes no app. R$ 69,90 por mês ou R$ 699,00 por ano.
+- [Regularizar CNPJ](https://pjpark.com.br/regularizar-cnpj/): declarações em atraso, débitos e situação cadastral inapta ou suspensa. Começa por um dossiê de R$ 69,90 e orçamento do escritório parceiro.
+- [Baixa de empresa](https://pjpark.com.br/baixa-de-empresa/): encerramento do CNPJ. Começa por um dossiê de R$ 69,90 e orçamento fechado do escritório parceiro.
+- [Serviços adicionais](https://pjpark.com.br/servicos/): abertura, alteração contratual, certidões, certificado digital, contabilidade retroativa, parcelamento e declarações avulsas, orçados à parte.
+- [Perguntas frequentes](https://pjpark.com.br/faq/)
+
+## Guias
+
+- [Estacionar ou encerrar](https://pjpark.com.br/blog/estacionar-ou-encerrar/)
+- [Empresa inativa, sem movimento ou baixada](https://pjpark.com.br/blog/empresa-inativa-sem-movimento-ou-baixada/)
+- [Inaptidão do CNPJ](https://pjpark.com.br/blog/inaptidao-do-cnpj/)
+- [Baixa de empresa: o passo a passo real](https://pjpark.com.br/blog/baixa-de-empresa-passo-a-passo/)
+- [Abandonei meu CNPJ, e agora?](https://pjpark.com.br/blog/abandonei-meu-cnpj-e-agora/)
+- [Dívida ativa e parcelamento](https://pjpark.com.br/blog/divida-ativa-e-parcelamento/)
+- [Quanto custa manter um CNPJ parado](https://pjpark.com.br/blog/quanto-custa-manter-cnpj-parado/)
+- [Reativar a empresa](https://pjpark.com.br/blog/reativar-empresa-inativa/)
+- [MEI parado](https://pjpark.com.br/blog/mei-parado/)
