@@ -4,13 +4,13 @@ Guidance for Claude Code when working in this repository.
 
 ## Development
 
-No build step, no framework, no CDN framework. Open any `.html` directly or serve with `npx serve .` / `python3 -m http.server 8080`. The only external resource is Overpass + Overpass Mono from Google Fonts. All styling lives in `assets/css/pjpark.css`.
+No build step, no framework, no CDN framework. Open any `.html` directly or serve with `npx serve .` / `python3 -m http.server 8080`. External resources: Overpass + Overpass Mono from Google Fonts, and Microsoft Clarity + Contentsquare, both loaded only after the visitor accepts the cookie notice. All styling lives in `assets/css/pjpark.css`; all shared behavior (mobile menu, cookie consent + analytics, FAQ anchor opening) lives in `assets/js/pjpark.js`, loaded with `defer` in every page's `<head>`. Never paste analytics snippets inline in the HTML.
 
 ## Architecture
 
 Multi-page static site for **PJ Park** (pjpark.com.br) - escritório online para empresas inativas, marca da Setbox Serviços Digitais.
 
-Pages: `index` (home), `baixa-de-empresa/`, `servicos/`, `faq/`, `contato/`, `blog/`, `blog/devo-inativar-minha-empresa/`, `termos-de-uso/`, `politica-de-privacidade/`.
+Pages: `index` (home), `baixa-de-empresa/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 20 posts em `blog/<slug>/`, `termos-de-uso/`, `politica-de-privacidade/`.
 
 Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.md`; the source of truth for the brand lives in the knowledge base at `~/obsidian/setbox/divisoes/pjpark/DESIGN.md`, with the master assets in `~/obsidian/setbox/divisoes/pjpark/assets/marca/`.
 
@@ -19,6 +19,7 @@ Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.
 | Caminho | O que é |
 |---|---|
 | `assets/css/pjpark.css` | Todo o CSS do site: tokens, componentes, tema claro e escuro |
+| `assets/js/pjpark.js` | Todo o JS comum: menu móvel, aviso de cookies + Clarity e Contentsquare, abertura da FAQ pela âncora |
 | `assets/brand/lockup-horizontal.svg` · `-escuro.svg` | Lockup do nav e do rodapé (claro e escuro) |
 | `assets/brand/lane-pin-*.svg` | Símbolo isolado: principal, escuro, secundária, sólida, mono |
 | `assets/brand/pin-na-vaga.svg` | Ilustração do hero da home |
@@ -34,22 +35,26 @@ Regenerar favicon ou OG: os fontes estão na base de conhecimento, comando em `D
 | Arquivo | Prefixo |
 |---|---|
 | `index.html` | `assets/` |
-| `baixa-de-empresa/`, `servicos/`, `faq/`, `contato/`, `blog/`, `termos-de-uso/`, `politica-de-privacidade/` | `../assets/` |
-| `blog/devo-inativar-minha-empresa/` | `../../assets/` |
+| `baixa-de-empresa/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/`, `termos-de-uso/`, `politica-de-privacidade/` | `../assets/` |
+| `blog/<slug>/` | `../../assets/` |
 
 ## Nav
 
-Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Ordem: `[lockup]` | Baixa de empresa | Serviços adicionais | Blog | Perguntas | Contato | Entrar | `[Começar]`.
+Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Desktop, de propósito com 3 links: `[lockup]` | Baixa de empresa | Serviços adicionais | Perguntas | Entrar | `[Começar]`. Blog, Sobre e Contato ficam no menu móvel e no rodapé.
 
-Página ativa: `aria-current="page"` no `.topo__link` - o CSS desenha o traço amarelo embaixo. Nunca marcar com cor inline.
+Página ativa: `aria-current="page"` no `.topo__link` (traço amarelo embaixo) e no link correspondente do `#menu-movel` (traço amarelo à esquerda). Posts marcam Blog no menu móvel. Nunca marcar com cor inline.
 
 CTA `Começar` aponta para `https://app.pjpark.com.br/register`, na mesma aba, e usa `.botao .botao--sinal`. `Entrar` é para quem já tem conta (cliente e parceiro, o login é o mesmo): botão fantasma `.botao .botao--fantasma .topo__entrar` (sem caixa em repouso, caixa no hover) apontando para a raiz do app, visível só no desktop; no celular é o último item do menu móvel (`.menu-movel__entrar`), e o rodapé repete na coluna Produto.
 
-Menu mobile: `#menu-movel` com `data-aberto="true|false"`, alternado pelo script no fim da página.
+Menu mobile: `#menu-movel` com `data-aberto="true|false"`, alternado por `assets/js/pjpark.js`, que também troca o `aria-label` (Abrir/Fechar menu), o ícone (`.menu-botao__abrir` / `.menu-botao__fechar`) e fecha com Esc.
+
+Acessibilidade comum: `<a class="pular" href="#conteudo">` logo após o `<body>` e `<main id="conteudo">`. Alvos de toque de 44px no celular.
+
+Links para o app (`app.pjpark.com.br`) abrem na mesma aba, sem `target="_blank"`. Nova aba só para sites de terceiros.
 
 ## Footer
 
-Três colunas (marca, Produto, Empresa), faixa tracejada e a linha com o logo Setbox, o CNPJ 08.889.601/0001-09 e o endereço (Av. Carneiro Leão, 563 - Zona 01, Maringá / PR - 87014-010). Links Setbox sempre absolutos.
+Quatro colunas (marca, PJ Park, Produto, Empresa), com títulos em `<h2 class="rodape__titulo">` (não `h4`, para não pular nível). Empresa termina no botão `Preferências de cookies` (`data-cookies`), que reabre o aviso. Depois, faixa tracejada e a linha com o logo Setbox, o CNPJ 08.889.601/0001-09 e o endereço (Av. Carneiro Leão, 563 - Zona 01, Maringá / PR - 87014-010). Links Setbox sempre absolutos.
 
 ## Componentes do CSS
 
@@ -57,7 +62,7 @@ Três colunas (marca, Produto, Empresa), faixa tracejada e a linha com o logo Se
 |---|---|
 | `.faixa-conteudo` | Wrapper de largura máxima (1080px) e gutter |
 | `.secao`, `.secao--curta`, `.secao--escura` | Blocos verticais; `--escura` é a faixa grafite |
-| `.secao--capa`, `.secao--dobra` | Primeira seção da página: ocupa a tela menos o topo (64px), empurrando o resto para baixo da dobra. `--capa` é a da home (título + apoio); `--dobra` é a das internas. Filho direto precisa de `width: 100%`, senão o `margin-inline: auto` da faixa encolhe o item flex |
+| `.secao--capa`, `.secao--dobra` | Primeira seção da página: ocupa a tela menos o topo (64px), empurrando o resto para baixo da dobra. `--capa` é a da home (título + apoio); `--dobra` só na baixa, que tem ilustração. As demais internas usam `.secao--curta`, para o conteúdo começar na primeira tela. Filho direto precisa de `width: 100%`, senão o `margin-inline: auto` da faixa encolhe o item flex |
 | `.capa__rolagem` | Dica de rolagem colada no rodapé da capa da home, apontando para o preço |
 | `.capa__pin` | Pin grande da home, cortado pelo topo e pela borda direita, ponta visível. Medidas em % da dobra (`height: 112%`, `right: -20%`), nunca fixas - com valor fixo ele vira logotipo grande centrado. No celular desce para o canto inferior. Usa a versão secundária (corpo asfalto), não a amarela: em amarelo briga com o CTA do cabeçalho |
 | `.borda-asfalto` | Divisor de asfalto com faixa amarela. **Uma por página** |
@@ -69,7 +74,11 @@ Três colunas (marca, Produto, Empresa), faixa tracejada e a linha com o logo Se
 | `.passo` + `.passo__numero` | Passos numerados (só quando a ordem importa de verdade) |
 | `.lista` | Lista com traço de pista no lugar do bullet |
 | `.etiqueta--ok/atencao/erro/neutra` | Estado com bolinha + rótulo escrito |
-| `.servico`, `.pergunta` | Linhas de catálogo e de FAQ |
+| `.servico` | Linhas de catálogo (título em `<h2 class="titulo-item">`) e itens do blog (`.blog__item`) |
+| `.perguntas__grupo` + `details.pergunta` | FAQ agrupada por tema, cada pergunta em `<details>` com `<summary><h3>`; a âncora `#id` abre a pergunta |
+| `.titulo-item` | h2 com peso visual de h3, quando a hierarquia pede h2 |
+| `.post__data` | Data do post (`<time datetime>`), no topo do post e no índice |
+| `.consentimento` | Aviso de cookies, criado pelo JS |
 | `.prosa`, `.prosa__tabela` | Texto longo: jurídico e blog |
 | `.mapa` | Iframe do Google Maps na página de contato |
 

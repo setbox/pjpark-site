@@ -28,16 +28,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/pjpark.css">
-  <script defer src="https://t.contentsquare.net/uxa/ad43e56ead802.js"></script>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ythvsgjalt");
-  </script>
+  <script defer src="../assets/js/pjpark.js"></script>
 </head>
 <body>
+
+  <a href="#conteudo" class="pular">Pular para o conteúdo</a>
 
   <header class="topo">
     <div class="faixa-conteudo topo__barra">
@@ -52,7 +47,8 @@
       </nav>
       <div class="topo__acoes">
         <button class="menu-botao" id="menu-botao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-movel">
-          <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><g fill="currentColor"><rect width="18" height="2" rx="1"/><rect y="6" width="18" height="2" rx="1"/><rect y="12" width="18" height="2" rx="1"/></g></svg>
+          <svg class="menu-botao__abrir" width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><g fill="currentColor"><rect width="18" height="2" rx="1"/><rect y="6" width="18" height="2" rx="1"/><rect y="12" width="18" height="2" rx="1"/></g></svg>
+          <svg class="menu-botao__fechar" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><g fill="currentColor"><rect x="-1.5" y="7" width="19" height="2" rx="1" transform="rotate(45 8 8)"/><rect x="-1.5" y="7" width="19" height="2" rx="1" transform="rotate(-45 8 8)"/></g></svg>
         </button>
         <a href="https://app.pjpark.com.br" class="botao botao--fantasma topo__entrar">Entrar</a>
         <a href="https://app.pjpark.com.br/register" class="botao botao--sinal">Começar</a>
@@ -62,7 +58,7 @@
       <div class="faixa-conteudo">
         <a href="../baixa-de-empresa/">Baixa de empresa</a>
         <a href="../servicos/">Serviços adicionais</a>
-        <a href="../blog/">Blog</a>
+        <a href="../blog/" aria-current="page">Blog</a>
         <a href="../faq/">Perguntas frequentes</a>
         <a href="../sobre/">Sobre a PJ Park</a>
         <a href="../contato/">Contato</a>
@@ -71,9 +67,9 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
 
-    <section class="secao secao--dobra">
+    <section class="secao secao--curta">
       <div class="faixa-conteudo pilha pilha-24" style="max-width:824px;">
         <p class="rotulo">Blog</p>
         <h1>O que fazer com um CNPJ parado</h1>
@@ -85,127 +81,142 @@
 
     <section class="secao">
       <div class="faixa-conteudo" style="max-width:824px;">
-        <div>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Decisão</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Devo inativar a minha empresa?</h2>
-            <p class="texto-apoio">Nem sempre encerrar é a melhor saída. Os riscos de abandonar, a burocracia de fechar e a terceira opção entre as duas.</p>
-            <a href="devo-inativar-minha-empresa/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Decisão</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Estacionar ou encerrar: cinco perguntas para decidir</h2>
-            <p class="texto-apoio">Cinco perguntas que resolvem a dúvida em dez minutos, sem precisar de opinião de ninguém.</p>
-            <a href="estacionar-ou-encerrar/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Vocabulário</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Empresa inativa, sem movimento ou baixada: qual é a diferença</h2>
-            <p class="texto-apoio">Três palavras que parecem a mesma coisa e levam a decisões opostas. Uma delas ainda gera obrigação todo mês.</p>
-            <a href="empresa-inativa-sem-movimento-ou-baixada/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Obrigações</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Quais declarações uma empresa sem faturamento ainda precisa entregar</h2>
-            <p class="texto-apoio">Faturamento zero não zera a obrigação. A lista do que vence todo mês, todo semestre e todo ano.</p>
-            <a href="declaracoes-empresa-sem-faturamento/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Obrigações</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Como provar que a sua empresa ficou em dia</h2>
-            <p class="texto-apoio">Dizer que está tudo certo é fácil. O que vale é o comprovante por competência, pronto para entregar a qualquer contador.</p>
-            <a href="como-provar-que-a-empresa-esta-em-dia/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Custos</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Quanto custa manter um CNPJ parado</h2>
-            <p class="texto-apoio">Três caminhos, três contas. Inclusive a do caminho que parece de graça e não é.</p>
-            <a href="quanto-custa-manter-cnpj-parado/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Regularização</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Abandonei meu CNPJ, e agora?</h2>
-            <p class="texto-apoio">Quatro passos para sair do limbo, na ordem em que eles realmente destravam o problema.</p>
-            <a href="abandonei-meu-cnpj-e-agora/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Regularização</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Dívida ativa e parcelamento: como negociar o passivo de uma empresa parada</h2>
-            <p class="texto-apoio">Dívida não some com a baixa. O que muda quando ela é inscrita e como o parcelamento destrava o resto.</p>
-            <a href="divida-ativa-e-parcelamento/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Regularização</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Contabilidade retroativa: quando vale refazer o passado</h2>
-            <p class="texto-apoio">Anos sem escrituração cobram a conta na baixa, na venda e no crédito. Quando vale refazer e quando não vale.</p>
-            <a href="contabilidade-retroativa/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Riscos</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">CNPJ ativo atrapalha o seguro-desemprego?</h2>
-            <p class="texto-apoio">Ter empresa aberta pode barrar o benefício, mesmo que ela não fature nada. O motivo e as saídas.</p>
-            <a href="cnpj-ativo-e-seguro-desemprego/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Riscos</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Inaptidão do CNPJ: o que acontece quando a empresa some do radar</h2>
-            <p class="texto-apoio">Não entregar declaração por tempo demais tem nome e consequência. E tem caminho de volta.</p>
-            <a href="inaptidao-do-cnpj/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Encerramento</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Baixa de empresa: o passo a passo real</h2>
-            <p class="texto-apoio">O caminho completo do encerramento, na ordem em que cada etapa trava a seguinte.</p>
-            <a href="baixa-de-empresa-passo-a-passo/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Documentos</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Certificado digital: e-CPF, e-CNPJ e procuração e-CAC</h2>
-            <p class="texto-apoio">Qual serve para quê, por que pedimos um deles e por que a procuração eletrônica não cobre tudo.</p>
-            <a href="certificado-digital-ecpf-ecnpj-ecac/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Documentos</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Certidões negativas: quando você vai precisar de cada uma</h2>
-            <p class="texto-apoio">Federal, estadual, municipal e FGTS. Quem pede cada uma, e por que elas saem com pendência.</p>
-            <a href="certidoes-negativas-de-debitos/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Onboarding</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">O que a gente precisa de você para começar</h2>
-            <p class="texto-apoio">A lista completa do que pedimos no cadastro, com a razão de cada item. Nada de burocracia sem explicação.</p>
-            <a href="o-que-precisamos-de-voce/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Segurança</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Seu certificado digital sob custódia: o que fazemos com ele</h2>
-            <p class="texto-apoio">Entregar certificado a alguém é um ato de confiança. O que a gente faz para merecer, em detalhe.</p>
-            <a href="certificado-digital-sob-custodia/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Transparência</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Por que uma empresa de tecnologia não assina a sua contabilidade</h2>
-            <p class="texto-apoio">Onde termina o software e começa a responsabilidade profissional do contador, e por que essa linha existe.</p>
-            <a href="quem-assina-sua-contabilidade/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Parceria</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Sou contador: como funciona a parceria com a PJ Park</h2>
-            <p class="texto-apoio">Carteira de clientes parados, portal próprio e o ato contábil com quem tem CRC. O convite está aberto.</p>
-            <a href="parceria-para-contadores/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">MEI</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">MEI parado: dá para estacionar?</h2>
-            <p class="texto-apoio">O MEI é um caso à parte. O que continua vencendo, o que a baixa simplificada resolve e onde a PJ Park entra.</p>
-            <a href="mei-parado/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
-          <article class="servico">
-            <p class="rotulo" style="margin-bottom:8px;">Reativação</p>
-            <h2 style="font-size:24px;margin-bottom:10px;">Reativar a empresa: o que acontece quando você decide voltar</h2>
-            <p class="texto-apoio">O que a gente faz, o que você recebe de volta e por que não chamamos isso de um clique.</p>
-            <a href="reativar-empresa-inativa/" class="link-seta" style="margin-top:14px;">Ler artigo</a>
-          </article>
+        <div class="blog__lista">
+          <section class="blog__grupo" aria-labelledby="tema-1">
+            <h2 id="tema-1">Decidir o que fazer</h2>
+            <article class="servico blog__item">
+              <h3>Devo inativar a minha empresa?</h3>
+              <p class="texto-apoio">Nem sempre encerrar é a melhor saída. Os riscos de abandonar, a burocracia de fechar e a terceira opção entre as duas.</p>
+              <p class="post__data"><time datetime="2026-05-08">8 de maio de 2026</time></p>
+              <a href="devo-inativar-minha-empresa/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Estacionar ou encerrar: cinco perguntas para decidir</h3>
+              <p class="texto-apoio">Cinco perguntas que resolvem a dúvida em dez minutos, sem precisar de opinião de ninguém.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="estacionar-ou-encerrar/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Empresa inativa, sem movimento ou baixada: qual é a diferença</h3>
+              <p class="texto-apoio">Três palavras que parecem a mesma coisa e levam a decisões opostas. Uma delas ainda gera obrigação todo mês.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="empresa-inativa-sem-movimento-ou-baixada/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Quanto custa manter um CNPJ parado</h3>
+              <p class="texto-apoio">Três caminhos, três contas. Inclusive a do caminho que parece de graça e não é.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="quanto-custa-manter-cnpj-parado/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>MEI parado: dá para estacionar?</h3>
+              <p class="texto-apoio">O MEI é um caso à parte. O que continua vencendo, o que a baixa simplificada resolve e onde a PJ Park entra.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="mei-parado/" class="link-seta">Ler artigo</a>
+            </article>
+          </section>
+          <section class="blog__grupo" aria-labelledby="tema-2">
+            <h2 id="tema-2">Manter a empresa em dia</h2>
+            <article class="servico blog__item">
+              <h3>Quais declarações uma empresa sem faturamento ainda precisa entregar</h3>
+              <p class="texto-apoio">Faturamento zero não zera a obrigação. A lista do que vence todo mês, todo semestre e todo ano.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="declaracoes-empresa-sem-faturamento/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Como provar que a sua empresa ficou em dia</h3>
+              <p class="texto-apoio">Dizer que está tudo certo é fácil. O que vale é o comprovante por competência, pronto para entregar a qualquer contador.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="como-provar-que-a-empresa-esta-em-dia/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Certidões negativas: quando você vai precisar de cada uma</h3>
+              <p class="texto-apoio">Federal, estadual, municipal e FGTS. Quem pede cada uma, e por que elas saem com pendência.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="certidoes-negativas-de-debitos/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>O que a gente precisa de você para começar</h3>
+              <p class="texto-apoio">A lista completa do que pedimos no cadastro, com a razão de cada item. Nada de burocracia sem explicação.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="o-que-precisamos-de-voce/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Certificado digital: e-CPF, e-CNPJ e procuração e-CAC</h3>
+              <p class="texto-apoio">Qual serve para quê, por que pedimos um deles e por que a procuração eletrônica não cobre tudo.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="certificado-digital-ecpf-ecnpj-ecac/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Seu certificado digital sob custódia: o que fazemos com ele</h3>
+              <p class="texto-apoio">Entregar certificado a alguém é um ato de confiança. O que a gente faz para merecer, em detalhe.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="certificado-digital-sob-custodia/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Por que uma empresa de tecnologia não assina a sua contabilidade</h3>
+              <p class="texto-apoio">Onde termina o software e começa a responsabilidade profissional do contador, e por que essa linha existe.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="quem-assina-sua-contabilidade/" class="link-seta">Ler artigo</a>
+            </article>
+          </section>
+          <section class="blog__grupo" aria-labelledby="tema-3">
+            <h2 id="tema-3">Resolver pendências</h2>
+            <article class="servico blog__item">
+              <h3>Abandonei meu CNPJ, e agora?</h3>
+              <p class="texto-apoio">Quatro passos para sair do limbo, na ordem em que eles realmente destravam o problema.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="abandonei-meu-cnpj-e-agora/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Dívida ativa e parcelamento: como negociar o passivo de uma empresa parada</h3>
+              <p class="texto-apoio">Dívida não some com a baixa. O que muda quando ela é inscrita e como o parcelamento destrava o resto.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="divida-ativa-e-parcelamento/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Contabilidade retroativa: quando vale refazer o passado</h3>
+              <p class="texto-apoio">Anos sem escrituração cobram a conta na baixa, na venda e no crédito. Quando vale refazer e quando não vale.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="contabilidade-retroativa/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Inaptidão do CNPJ: o que acontece quando a empresa some do radar</h3>
+              <p class="texto-apoio">Não entregar declaração por tempo demais tem nome e consequência. E tem caminho de volta.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="inaptidao-do-cnpj/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>CNPJ ativo atrapalha o seguro-desemprego?</h3>
+              <p class="texto-apoio">Ter empresa aberta pode barrar o benefício, mesmo que ela não fature nada. O motivo e as saídas.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="cnpj-ativo-e-seguro-desemprego/" class="link-seta">Ler artigo</a>
+            </article>
+          </section>
+          <section class="blog__grupo" aria-labelledby="tema-4">
+            <h2 id="tema-4">Voltar a operar ou encerrar</h2>
+            <article class="servico blog__item">
+              <h3>Reativar a empresa: o que acontece quando você decide voltar</h3>
+              <p class="texto-apoio">O que a gente faz, o que você recebe de volta e por que não chamamos isso de um clique.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="reativar-empresa-inativa/" class="link-seta">Ler artigo</a>
+            </article>
+            <article class="servico blog__item">
+              <h3>Baixa de empresa: o passo a passo real</h3>
+              <p class="texto-apoio">O caminho completo do encerramento, na ordem em que cada etapa trava a seguinte.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="baixa-de-empresa-passo-a-passo/" class="link-seta">Ler artigo</a>
+            </article>
+          </section>
+          <section class="blog__grupo" aria-labelledby="tema-5">
+            <h2 id="tema-5">Para contadores</h2>
+            <article class="servico blog__item">
+              <h3>Sou contador: como funciona a parceria com a PJ Park</h3>
+              <p class="texto-apoio">Carteira de clientes parados, portal próprio e o ato contábil com quem tem CRC. O convite está aberto.</p>
+              <p class="post__data"><time datetime="2026-09-16">16 de setembro de 2026</time></p>
+              <a href="parceria-para-contadores/" class="link-seta">Ler artigo</a>
+            </article>
+          </section>
         </div>
       </div>
     </section>
@@ -220,28 +231,29 @@
         <p class="rodape__miudo">Escritório online para empresas inativas.<br>pjpark.com.br</p>
       </div>
       <div class="rodape__coluna">
-        <h4>PJ Park</h4>
+        <h2 class="rodape__titulo">PJ Park</h2>
         <a href="../sobre/">Sobre a PJ Park</a>
         <a href="../contato/">Contato</a>
         <a href="../blog/">Blog</a>
       </div>
       <div class="rodape__coluna">
-        <h4>Produto</h4>
+        <h2 class="rodape__titulo">Produto</h2>
         <a href="../baixa-de-empresa/">Baixa de empresa</a>
         <a href="../servicos/">Serviços adicionais</a>
         <a href="../faq/">Perguntas frequentes</a>
         <a href="https://app.pjpark.com.br">Entrar</a>
       </div>
       <div class="rodape__coluna">
-        <h4>Empresa</h4>
+        <h2 class="rodape__titulo">Empresa</h2>
         <a href="../termos-de-uso/">Termos de Uso</a>
         <a href="../politica-de-privacidade/">Política de Privacidade</a>
         <a href="mailto:contato@setbox.com.br">contato@setbox.com.br</a>
+        <button type="button" class="rodape__botao" data-cookies>Preferências de cookies</button>
       </div>
     </div>
-    <div class="faixa-conteudo" style="margin-top:36px;">
+    <div class="faixa-conteudo rodape__base">
       <div class="faixa" role="presentation"></div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;margin-top:20px;">
+      <div class="rodape__linha">
         <a href="https://setbox.com.br" target="_blank" rel="noopener" class="rodape__setbox" aria-label="Setbox">
           <img src="../assets/setbox-lockup.svg" alt="Setbox" width="1284" height="380">
         </a>
@@ -250,16 +262,5 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var botao = document.getElementById('menu-botao');
-      var menu = document.getElementById('menu-movel');
-      botao.addEventListener('click', function () {
-        var aberto = menu.getAttribute('data-aberto') === 'true';
-        menu.setAttribute('data-aberto', String(!aberto));
-        botao.setAttribute('aria-expanded', String(!aberto));
-      });
-    })();
-  </script>
 </body>
 </html>

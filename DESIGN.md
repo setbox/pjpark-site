@@ -20,7 +20,14 @@ Todos em `assets/css/pjpark.css`, no `:root`, redefinidos no bloco `prefers-colo
 | `--sinal` | `#F5B301` | `#FFC81F` | Cor da marca: botão, faixa, destaque |
 | `--grafite` | `#2A2F36` | `#0E1114` | Tinta |
 | `--grafite-fundo` | `#22262C` | `#22262C` | Fundo das seções escuras |
-| `--asfalto` | `#6B7380` | `#848C99` | Cinza de apoio, rótulos |
+| `--asfalto` | `#6B7380` | `#848C99` | Cinza de apoio: bordas, bolinha neutra |
+| `--asfalto-texto` | `#5F6773` | `#848C99` | Asfalto como tinta (rótulos, dica de rolagem). O `#6B7380` dá 4,2:1 no papel e reprova texto pequeno |
+| `--sinal-hover` | `#FFC81F` | `#FFD95C` | Hover do botão amarelo |
+| `--texto-sobre-sinal` | `#2A2F36` | `#2A2F36` | Texto sobre o amarelo |
+| `--escura-texto` | `#9AA2AD` | `#9AA2AD` | Texto de apoio na faixa grafite |
+| `--grafite-cartao`, `--grafite-borda` | `#2A2F36`, `#3A4149` | `#323840`, `#464D57` | Cartão e borda dentro da faixa grafite |
+
+No escuro, `--grafite-fundo` sobe para `#2A2F36` e a faixa ganha borda em cima e embaixo, senão some no fundo da página.
 
 Estado (separado da marca): `--ok #2FA36B`, `--atencao #F5B301`, `--erro #D14B3D`.
 
@@ -56,7 +63,7 @@ Estado (separado da marca): `--ok #2FA36B`, `--atencao #F5B301`, `--erro #D14B3D
   preço, prova, processo - fica sempre abaixo da linha de corte, em monitor alto ou baixo. O miolo
   flutua no centro (`margin-block: auto`) e o conteúdo nunca é cortado: em tela curta o
   `min-height` cede.
-- **Foco:** `outline: 2px solid var(--sinal)` com `outline-offset: 2px`. Obrigatório.
+- **Foco:** anel duplo: `outline: 2px solid var(--foco-anel)` (tinta) com `outline-offset: 2px` e `box-shadow: 0 0 0 2px var(--sinal)` preenchendo o vão. O amarelo sozinho dá 1,6:1 no papel; com o anel de tinta passa 3:1 em qualquer fundo. Obrigatório.
 
 ---
 
