@@ -97,6 +97,19 @@ sinalização.
 
 ---
 
+## Movimento
+
+Movimento só onde explica estado, mais um momento de marca. Nada de revelar seções ao rolar.
+
+| Onde | O quê | Tempo |
+|---|---|---|
+| Capa da home | Pin desce e para na vaga (`estaciona`), uma vez por carga | 900ms |
+| Borda de asfalto da home | A faixa da `.borda-asfalto--desenha` se pinta da esquerda para a direita (`pinta-faixa`) quando sobe para a área de leitura (IntersectionObserver, 25% acima do rodapé da tela). No carregamento ela fica rente à borda da tela e passaria despercebida. Sem JS ela já vem pintada | 1,5s, uma vez |
+| FAQ | Resposta abre puxando a altura (`::details-content` + `interpolate-size`), fecha mais rápido | 320ms abre, 200ms fecha |
+| Menu móvel | Desliza em altura; fechado fica `visibility: hidden` | 300ms abre, 200ms fecha |
+
+Curva padrão `cubic-bezier(.16, 1, .3, 1)`. Sem suporte a `interpolate-size`, FAQ e menu abrem na hora. Com `prefers-reduced-motion`, o pin só aparece em fade, a faixa já vem pintada e FAQ e menu abrem sem transição; cor de hover e foco continuam. O texto da capa nunca espera animação.
+
 ## Faixa de pista
 
 A assinatura do site. `.borda-asfalto` é a barra grafite com a faixa amarela saindo pela borda, e `.faixa` é a versão fina.

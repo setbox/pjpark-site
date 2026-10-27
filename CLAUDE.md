@@ -40,11 +40,11 @@ Regenerar favicon ou OG: os fontes estão na base de conhecimento, comando em `D
 
 ## Nav
 
-Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Desktop, de propósito com 3 links: `[lockup]` | Baixa de empresa | Serviços adicionais | Perguntas | Entrar | `[Começar]`. Blog, Sobre e Contato ficam no menu móvel e no rodapé.
+Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Desktop, de propósito com 3 links e uma ação só: `[lockup]` | Baixa de empresa | Serviços adicionais | Perguntas | `[Começar]`. Blog, Sobre e Contato ficam no menu móvel e no rodapé. Não há Entrar no cabeçalho: o cadastro do app já tem "Já tem conta? Entrar", e cliente raramente passa pelo site.
 
 Página ativa: `aria-current="page"` no `.topo__link` (traço amarelo embaixo) e no link correspondente do `#menu-movel` (traço amarelo à esquerda). Posts marcam Blog no menu móvel. Nunca marcar com cor inline.
 
-CTA `Começar` aponta para `https://app.pjpark.com.br/register`, na mesma aba, e usa `.botao .botao--sinal`. `Entrar` é para quem já tem conta (cliente e parceiro, o login é o mesmo): botão fantasma `.botao .botao--fantasma .topo__entrar` (sem caixa em repouso, caixa no hover) apontando para a raiz do app, visível só no desktop; no celular é o último item do menu móvel (`.menu-movel__entrar`), e o rodapé repete na coluna Produto.
+CTA `Começar` aponta para `https://app.pjpark.com.br/register`, na mesma aba, e usa `.botao .botao--sinal`. `Entrar` é para quem já tem conta (cliente e parceiro, o login é o mesmo) e aponta para a raiz do app: fica só no fim do menu móvel (`.menu-movel__entrar`) e na coluna Produto do rodapé.
 
 Menu mobile: `#menu-movel` com `data-aberto="true|false"`, alternado por `assets/js/pjpark.js`, que também troca o `aria-label` (Abrir/Fechar menu), o ícone (`.menu-botao__abrir` / `.menu-botao__fechar`) e fecha com Esc.
 

@@ -27,6 +27,21 @@
     });
   }
 
+  /* ---------- home: a faixa da borda de asfalto se pinta à vista ---------- */
+
+  var faixa = document.querySelector('.borda-asfalto--desenha');
+  var reduzido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (faixa && 'IntersectionObserver' in window && !reduzido) {
+    faixa.setAttribute('data-faixa', 'aguardando');
+    var observador = new IntersectionObserver(function (entradas) {
+      if (!entradas[0].isIntersecting) return;
+      faixa.setAttribute('data-faixa', 'pintando');
+      observador.disconnect();
+    }, { rootMargin: '0px 0px -25% 0px' });
+    observador.observe(faixa);
+  }
+
   /* ---------- FAQ: a âncora abre a pergunta fechada ---------- */
 
   function abrirAncora() {
