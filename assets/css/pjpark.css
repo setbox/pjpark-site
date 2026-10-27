@@ -188,41 +188,14 @@ a { color: inherit; }
 .secao--capa { position: relative; overflow: hidden; }
 
 /* Momento de marca, uma vez por carga da home: o pin desce e para na vaga,
-   desacelerando como carro estacionando; logo depois a faixa amarela da
-   borda de asfalto se pinta da esquerda para a direita. O texto nunca
-   espera: só o pin e a faixa se movem. */
-.capa__pin { animation: estaciona .9s cubic-bezier(.16, 1, .3, 1) both; }
+   desacelerando como carro estacionando. O texto nunca espera. */
+.capa__pin { animation: estaciona 1.8s cubic-bezier(.16, 1, .3, 1) both; }
 
 @keyframes estaciona {
   from { opacity: 0; transform: translateY(-14%); }
   to { opacity: 1; transform: none; }
 }
 
-/* Seletor duplo: precisa vencer o fundo listrado da .borda-asfalto, que
-   vem depois no arquivo; senão a faixa animada pinta sobre uma já pronta. */
-.borda-asfalto.borda-asfalto--desenha {
-  position: relative;
-  background: var(--grafite-fundo);
-}
-.borda-asfalto--desenha::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 5px;
-  background: repeating-linear-gradient(90deg, var(--sinal) 0 24px, transparent 24px 48px);
-}
-/* O JS só esconde a faixa se puder pintá-la depois: sem JS ela já vem pronta.
-   A pintura começa quando a borda sobe para a área de leitura, e não no
-   carregamento, quando ela fica rente ao rodapé da tela e passa batida. */
-.borda-asfalto--desenha[data-faixa="aguardando"]::after { clip-path: inset(0 100% 0 0); }
-.borda-asfalto--desenha[data-faixa="pintando"]::after {
-  animation: pinta-faixa 1.5s cubic-bezier(.65, 0, .35, 1) both;
-}
-
-@keyframes pinta-faixa {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0); }
-}
 .secao--capa > .faixa-conteudo { position: relative; z-index: 1; }
 
 .capa__titulo h1 { font-size: clamp(38px, 6.4vw, 72px); }
@@ -826,12 +799,11 @@ img.so-escuro, .so-escuro { display: none; }
 }
 
 /* Movimento reduzido: tira o deslocamento e mantém o que confirma estado.
-   O pin só aparece em fade, a faixa já vem pintada, menu e FAQ abrem na
+   O pin só aparece em fade, menu e FAQ abrem na
    hora; cor de hover e foco continuam com transição. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .capa__pin { animation: surge .4s ease-out both; }
-  .borda-asfalto--desenha[data-faixa]::after { animation: none; clip-path: none; }
   .menu-movel, .menu-movel[data-aberto="true"] { transition: none; }
   .pergunta::details-content { transition: none; }
   .pergunta > summary::after { transition: none; }
