@@ -10,7 +10,7 @@ No build step, no framework, no CDN framework. Open any `.html` directly or serv
 
 Multi-page static site for **PJ Park** (pjpark.com.br) - escritório online para empresas inativas, marca da Setbox Serviços Digitais.
 
-Pages: `index` (home), `baixa-de-empresa/`, `regularizar-cnpj/`, `reativar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 27 posts em `blog/<slug>/`, `termos-de-uso/`, `politica-de-privacidade/`.
+Pages: `index` (home), `baixa-de-empresa/`, `regularizar-cnpj/`, `reativar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 27 posts em `blog/<slug>/`, `termos-de-uso/`, `politica-de-privacidade/`. `404.html` na raiz (GitHub Pages serve para qualquer endereço inexistente): links e assets com caminho absoluto (`/assets/...`), `noindex`, fora do sitemap.
 
 Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.md`; the source of truth for the brand lives in the knowledge base at `~/obsidian/setbox/divisoes/pjpark/DESIGN.md`, with the master assets in `~/obsidian/setbox/divisoes/pjpark/assets/marca/`.
 
