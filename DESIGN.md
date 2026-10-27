@@ -46,7 +46,7 @@ Estado (separado da marca): `--ok #2FA36B`, `--atencao #F5B301`, `--erro #D14B3D
 | H3 | `h3` | 18px, peso 800 |
 | Chamada | `.chamada` | `clamp(16px, 2vw, 19px)`, cor `--ink-2` |
 | Texto | `.texto-apoio` | 15px, cor `--ink-2` |
-| Rótulo de seção | `.rotulo` | 11px mono, caixa alta, tracking 0.14em |
+| Rótulo | `.rotulo` | 11px mono, caixa alta, tracking 0.14em. Só para rotular link ou dado; nunca acima de título (sem eyebrow) |
 | Texto longo | `.prosa` | 16px, largura máxima 68ch |
 
 ---
@@ -73,7 +73,9 @@ Estado (separado da marca): `--ok #2FA36B`, `--atencao #F5B301`, `--erro #D14B3D
 |---|---|
 | Nav e rodapé | `lockup-horizontal.svg` + `lockup-horizontal-escuro.svg` (alternados por `.so-claro` / `.so-escuro`) |
 | Hero da home | `pin-na-vaga.svg` |
-| Hero da baixa | `cancela.svg` |
+| Capa da baixa | `cancela.svg` |
+| Capa da regularização | `faixa-repintada.svg` |
+| Capa da reativação | `cancela-aberta.svg` (par da cancela fechada da baixa) |
 | Favicon | `icon.svg`, `favicon-16x16.png`, `favicon-32x32.png`, `favicon.ico` |
 | App icon | `apple-touch-icon.png` (180), `icon-192.png`, `icon-512.png` |
 | Compartilhamento | `og-image.png` (1200x630) |
@@ -132,6 +134,8 @@ Sempre pílula com bolinha **e** rótulo escrito - cor sozinha não comunica.
 <span class="etiqueta etiqueta--ok"><i></i>Declarações em dia</span>
 <span class="etiqueta etiqueta--erro"><i></i>Irregular</span>
 ```
+
+Etiqueta é **só para estado**. Condição comercial (preço do dossiê, preço fechado) vai em texto (`.nota-capa`), nunca em pílula.
 
 O amarelo é cor de marca e cor de atenção ao mesmo tempo. Em tela com muito estado, deixe o amarelo para o estado e a marca para o símbolo e as faixas.
 

@@ -142,10 +142,11 @@ a { color: inherit; }
    empurra, nunca é cortado. */
 .secao--capa,
 .secao--dobra {
-  /* Desconta o topo fixo e a borda de asfalto: a faixa amarela fecha a
+  /* Desconta o topo fixo (64px + 1px de linha), a borda de asfalto (12px)
+     e 1px de arredondamento: a faixa amarela fecha a
      dobra em vez de passar despercebida atrás do cabeçalho. */
-  min-height: calc(100vh - var(--altura-topo) - 12px);
-  min-height: calc(100svh - var(--altura-topo) - 12px);
+  min-height: calc(100vh - var(--altura-topo) - 14px);
+  min-height: calc(100svh - var(--altura-topo) - 14px);
   display: flex;
   flex-direction: column;
 }
@@ -159,6 +160,11 @@ a { color: inherit; }
 
 .secao--capa > .capa,
 .secao--dobra > .faixa-conteudo:first-child { margin-block: auto; }
+
+/* Nas capas internas o respiro acompanha a altura da tela, não a largura:
+   com o padding de .secao (até 96px) a capa da baixa passava da dobra em
+   monitor baixo e escondia a borda de asfalto. */
+.secao--dobra { padding-block: clamp(32px, 6vh, 72px); }
 
 /* No celular o pin ocupa o canto de baixo: o texto sobe para o topo em vez
    de flutuar no meio, que deixava um vão vazio acima do título. */
@@ -785,9 +791,18 @@ p { margin: 0; }
 .limite-titulo { max-width: 22ch; }
 .limite-texto { max-width: 60ch; }
 .acoes { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.acoes--juntas { gap: 8px; }
+/* Título das portas de entrada (regularizar, reativar): quebra em duas
+   linhas, para as capas terem o mesmo peso. */
+.titulo-porta { max-width: 11em; }
+/* Condição comercial da capa, em texto: etiqueta é só para estado */
+.nota-capa { font-size: 14px; line-height: 1.6; color: var(--ink-2); max-width: 52ch; }
+/* Saída para quem já é cliente, abaixo dos botões de conversão */
+.link-cliente { font-size: 14px; color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--sinal); text-underline-offset: 3px; width: fit-content; padding-block: 12px; margin-block: -12px; }
+.link-cliente:hover { color: var(--ink); }
 .transparencia__titulo { font-size: 22px; }
-.baixa__cancela { width: 100%; max-width: 220px; margin-inline: auto; display: block; }
+.capa__ilustracao { width: 100%; max-width: 220px; margin-inline: auto; display: block; }
+/* Em uma coluna a ilustração vem depois do texto: menor, para a capa caber na tela */
+@media (max-width: 719px) { .capa__ilustracao { max-width: 120px; } }
 img.so-claro, .so-claro { display: block; }
 img.so-escuro, .so-escuro { display: none; }
 

@@ -10,7 +10,7 @@ No build step, no framework, no CDN framework. Open any `.html` directly or serv
 
 Multi-page static site for **PJ Park** (pjpark.com.br) - escritório online para empresas inativas, marca da Setbox Serviços Digitais.
 
-Pages: `index` (home), `baixa-de-empresa/`, `regularizar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 20 posts em `blog/<slug>/`, `termos-de-uso/`, `politica-de-privacidade/`.
+Pages: `index` (home), `baixa-de-empresa/`, `regularizar-cnpj/`, `reativar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 27 posts em `blog/<slug>/`, `termos-de-uso/`, `politica-de-privacidade/`.
 
 Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.md`; the source of truth for the brand lives in the knowledge base at `~/obsidian/setbox/divisoes/pjpark/DESIGN.md`, with the master assets in `~/obsidian/setbox/divisoes/pjpark/assets/marca/`.
 
@@ -24,6 +24,7 @@ Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.
 | `assets/brand/lane-pin-*.svg` | Símbolo isolado: principal, escuro, secundária, sólida, mono |
 | `assets/brand/pin-na-vaga.svg` | Ilustração do hero da home |
 | `assets/brand/cancela.svg`, `vaga.svg`, `placa-p.svg`, `faixa-*.svg`, `hachura-diagonal.svg` | Elementos auxiliares |
+| `assets/brand/faixa-repintada.svg`, `cancela-aberta.svg`, `placa-pendencias.svg`, `pin-alinhado.svg`, `saida-da-vaga.svg`, `sinal-verde.svg` | Ilustrações das capas (as duas primeiras em uso em regularizar e reativar). PNG 256 na base, em `assets/marca/png/el-<nome>.png` |
 | `assets/favicon*`, `icon.svg`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` | Favicons gerados do símbolo sólido |
 | `assets/og-image.png` | Open Graph 1200x630, fundo grafite com lockup |
 | `assets/setbox-lockup.svg` | Logo Setbox do rodapé |
@@ -35,12 +36,12 @@ Regenerar favicon ou OG: os fontes estão na base de conhecimento, comando em `D
 | Arquivo | Prefixo |
 |---|---|
 | `index.html` | `assets/` |
-| `baixa-de-empresa/`, `regularizar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/`, `termos-de-uso/`, `politica-de-privacidade/` | `../assets/` |
+| `baixa-de-empresa/`, `regularizar-cnpj/`, `reativar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/`, `termos-de-uso/`, `politica-de-privacidade/` | `../assets/` |
 | `blog/<slug>/` | `../../assets/` |
 
 ## Nav
 
-Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Desktop com 4 links e uma ação só, na ordem da jornada: `[lockup]` | Regularizar CNPJ | Baixa de empresa | Serviços adicionais | Perguntas | `[Começar]`. Menu móvel e rodapé seguem a mesma ordem. Blog, Sobre e Contato ficam no menu móvel e no rodapé. Não há Entrar no cabeçalho: o cadastro do app já tem "Já tem conta? Entrar", e cliente raramente passa pelo site.
+Lockup (duas `<img>`, `so-claro` e `so-escuro`) linkando para a home. Desktop com 4 links e uma ação só, as três portas de entrada na ordem da jornada: `[lockup]` | Regularizar CNPJ | Reativar CNPJ | Baixa de empresa | Perguntas | `[Começar]`. Serviços adicionais é catálogo e fica fora do cabeçalho: menu móvel, rodapé (coluna Produto), home ("Ver serviços adicionais") e links nas páginas de serviço. Menu móvel e rodapé seguem a ordem: Regularizar, Reativar, Baixa, Serviços adicionais. Blog, Sobre e Contato ficam no menu móvel e no rodapé. Não há Entrar no cabeçalho: o cadastro do app já tem "Já tem conta? Entrar", e cliente raramente passa pelo site.
 
 Página ativa: `aria-current="page"` no `.topo__link` (traço amarelo embaixo) e no link correspondente do `#menu-movel` (traço amarelo à esquerda). Posts marcam Blog no menu móvel. Nunca marcar com cor inline.
 
@@ -62,12 +63,12 @@ Quatro colunas (marca, PJ Park, Produto, Empresa), com títulos em `<h2 class="r
 |---|---|
 | `.faixa-conteudo` | Wrapper de largura máxima (1080px) e gutter |
 | `.secao`, `.secao--curta`, `.secao--escura` | Blocos verticais; `--escura` é a faixa grafite |
-| `.secao--capa`, `.secao--dobra` | Primeira seção da página: ocupa a tela menos o topo (64px), empurrando o resto para baixo da dobra. `--capa` é a da home (título + apoio); `--dobra` só na baixa, que tem ilustração. As demais internas usam `.secao--curta`, para o conteúdo começar na primeira tela. Filho direto precisa de `width: 100%`, senão o `margin-inline: auto` da faixa encolhe o item flex |
+| `.secao--capa`, `.secao--dobra` | Primeira seção da página: ocupa a tela menos o topo (64px), empurrando o resto para baixo da dobra. `--capa` é a da home (título + apoio); `--dobra` nas três portas de entrada (baixa, regularizar, reativar), sempre com ilustração da marca em `.capa__ilustracao`. As demais internas usam `.secao--curta`, para o conteúdo começar na primeira tela. Filho direto precisa de `width: 100%`, senão o `margin-inline: auto` da faixa encolhe o item flex |
 | `.capa__rolagem` | Dica de rolagem colada no rodapé da capa da home, apontando para o preço |
 | `.capa__pin` | Pin grande da home, cortado pelo topo e pela borda direita, ponta visível. Medidas em % da dobra (`height: 112%`, `right: -20%`), nunca fixas - com valor fixo ele vira logotipo grande centrado. No celular desce para o canto inferior. Usa a versão secundária (corpo asfalto), não a amarela: em amarelo briga com o CTA do cabeçalho |
 | `.borda-asfalto` | Divisor de asfalto com faixa amarela. **Uma por página** |
 | `.faixa` | Faixa tracejada fina (rodapé, divisores) |
-| `.rotulo` | Label de seção em mono, caixa alta |
+| `.rotulo` | Label em mono, caixa alta, só para rotular um link ou dado (ex.: "Pergunta relacionada"). **Nunca acima de título**: o título fala sozinho |
 | `.chamada`, `.texto-apoio` | Parágrafo de destaque e parágrafo comum |
 | `.botao--sinal`, `.botao--linha`, `.link-seta` | Botões e link com sublinhado amarelo |
 | `.cartao`, `.grade--2/3/4`, `.pilha-*` | Cartões, grades e espaçamento vertical |
@@ -77,6 +78,8 @@ Quatro colunas (marca, PJ Park, Produto, Empresa), com títulos em `<h2 class="r
 | `.servico` | Linhas de catálogo (título em `<h2 class="titulo-item">`) e itens do blog (`.blog__item`) |
 | `.perguntas__grupo` + `details.pergunta` | FAQ agrupada por tema, cada pergunta em `<details>` com `<summary><h3>`; a âncora `#id` abre a pergunta |
 | `.titulo-item` | h2 com peso visual de h3, quando a hierarquia pede h2 |
+| `.titulo-porta` | H1 das portas de entrada (regularizar, reativar), limitado para quebrar em duas linhas |
+| `.link-cliente` | Saída discreta para quem já é cliente (raiz do app), abaixo dos botões de conversão das portas de entrada |
 | `.post__data` | Data do post (`<time datetime>`), no topo do post e no índice |
 | `.consentimento` | Aviso de cookies, criado pelo JS |
 | `.prosa`, `.prosa__tabela` | Texto longo: jurídico e blog |
@@ -101,6 +104,6 @@ Quatro colunas (marca, PJ Park, Produto, Empresa), com títulos em `<h2 class="r
 
 Toda página: `meta[description]`, `link[canonical]`, Open Graph (`og:type/site_name/locale/url/title/description/image`) e Twitter card `summary_large_image`. OG image: `assets/og-image.png`. `og:site_name` = "PJ Park".
 
-Dados estruturados (JSON-LD, `<script type="application/ld+json">` no fim do `<head>`): home com Organization + WebSite + Service dos planos; baixa e regularizar com Service (+ FAQPage na regularizar); serviços com OfferCatalog; FAQ com FAQPage (texto igual ao visível); posts com BlogPosting + BreadcrumbList, `og:type` article e `article:published_time`/`modified_time`. Ao mudar preço, pergunta da FAQ ou data de post, atualizar o JSON-LD junto. `llms.txt` na raiz resume o site para buscadores de IA.
+Dados estruturados (JSON-LD, `<script type="application/ld+json">` no fim do `<head>`): home com Organization + WebSite + Service dos planos; baixa, regularizar e reativar com Service (+ FAQPage em regularizar e reativar); serviços com OfferCatalog; FAQ com FAQPage (texto igual ao visível); posts com BlogPosting + BreadcrumbList, `og:type` article e `article:published_time`/`modified_time`. Ao mudar preço, pergunta da FAQ ou data de post, atualizar o JSON-LD junto. `llms.txt` na raiz resume o site para buscadores de IA.
 
 Posts: começam com um parágrafo **Resposta curta:** quando o título é uma pergunta de intenção de compra, e terminam com a seção **Fontes** (links oficiais gov.br/Planalto, nova aba). Afirmação fiscal sem fonte não entra: nada de faixa de multa, score ou obrigação extinta (GFIP).

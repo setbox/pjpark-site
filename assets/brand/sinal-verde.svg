@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Semáforo grafite com a luz verde acesa, sinal para voltar a rodar">
+  <rect x="29" y="48" width="6" height="14" rx="1" fill="#6B7380" />
+  <rect x="20" y="4" width="24" height="46" rx="5" fill="#2A2F36" />
+  <rect x="16" y="12" width="4" height="8" rx="1" fill="#2A2F36" />
+  <rect x="44" y="12" width="4" height="8" rx="1" fill="#2A2F36" />
+  <circle cx="32" cy="14" r="5" fill="#3A4149" />
+  <circle cx="32" cy="27" r="5" fill="#3A4149" />
+  <circle cx="32" cy="40" r="5" fill="#2FA36B" />
+  <rect x="8" y="61" width="9" height="2" rx="0.5" fill="#F5B301" />
+  <rect x="47" y="61" width="9" height="2" rx="0.5" fill="#F5B301" />
+</svg>

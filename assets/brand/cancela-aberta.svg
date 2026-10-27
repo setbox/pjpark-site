@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Cancela de estacionamento com o braço levantado, liberando a saída">
+  <defs>
+    <clipPath id="bracoAberto"><rect x="19" y="36" width="40" height="11" rx="2" /></clipPath>
+  </defs>
+  <rect x="8" y="34" width="11" height="26" rx="2" fill="#2A2F36" />
+  <g transform="rotate(-58 19 41.5)">
+    <rect x="19" y="36" width="40" height="11" rx="2" fill="#2A2F36" />
+    <g clip-path="url(#bracoAberto)" fill="#F5B301">
+      <path d="M26 36h7L22 47h-7z" />
+      <path d="M37 36h7L33 47h-7z" />
+      <path d="M48 36h7L44 47h-7z" />
+      <path d="M59 36h7L55 47h-7z" />
+    </g>
+  </g>
+  <rect x="4" y="61" width="9" height="2" rx="0.5" fill="#F5B301" />
+  <rect x="18" y="61" width="9" height="2" rx="0.5" fill="#F5B301" />
+  <rect x="32" y="61" width="9" height="2" rx="0.5" fill="#F5B301" />
+  <rect x="46" y="61" width="9" height="2" rx="0.5" fill="#F5B301" />
+</svg>
