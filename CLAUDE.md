@@ -90,7 +90,7 @@ Quatro colunas (marca, PJ Park, Produto, Empresa); a coluna da marca termina no 
 - Português do Brasil
 - Sem ponto final em título ou subtítulo (h1-h6)
 - Nunca usar travessão - use hífen ou vírgula
-- CTAs de conversão: `https://app.pjpark.com.br/register`. Acesso de quem já tem conta (Entrar, Acessar a plataforma): `https://app.pjpark.com.br`, que leva ao painel se já houver sessão e ao login se não
+- CTAs de conversão: `https://app.pjpark.com.br/register`. Os botões de conversão das portas de entrada levam o objetivo em `?purpose=`: `closure` (baixa), `regularization`, `reactivation`, e `park` nos botões de plano da home; o app pré-seleciona o objetivo no onboarding. O "Começar" do cabeçalho segue sem parâmetro. Acesso de quem já tem conta (Entrar, Acessar a plataforma): `https://app.pjpark.com.br`, que leva ao painel se já houver sessão e ao login se não
 - E-mail de contato: `contato@setbox.com.br`
 - Domínio: `pjpark.com.br`
 - **Não prometer o que o produto não faz.** Reativação é **assistida**, não "1 clique". Não usar "o primeiro" nem número de clientes sem lastro.
