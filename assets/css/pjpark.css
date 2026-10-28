@@ -765,6 +765,16 @@ p { margin: 0; }
   cursor: pointer;
 }
 .rodape__coluna a:hover, .rodape__botao:hover { color: var(--ink); }
+.rodape__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 6px 0 0 -12px;
+  color: var(--ink-2);
+}
+.rodape__social:hover { color: var(--ink); }
 .rodape__base { margin-top: 36px; }
 .rodape__linha {
   display: flex;
