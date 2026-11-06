@@ -71,6 +71,36 @@
     })(window, document, 'clarity', 'script', 'ythvsgjalt');
   }
 
+  var COOKIE_ORIGEM = 'pjpark_origem';
+  var CAMPOS_ORIGEM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+
+  function dominioOrigem() {
+    return /(^|\.)pjpark\.com\.br$/.test(location.hostname) ? '; domain=.pjpark.com.br' : '';
+  }
+
+  function temOrigem() {
+    return document.cookie.split('; ').some(function (cookie) {
+      return cookie.indexOf(COOKIE_ORIGEM + '=') === 0;
+    });
+  }
+
+  function apagarOrigem() {
+    document.cookie = COOKIE_ORIGEM + '=; path=/; max-age=0' + dominioOrigem();
+  }
+
+  function gravarOrigem() {
+    if (lerEscolha() === 'recusado' || temOrigem()) return;
+    var busca = new URLSearchParams(location.search);
+    var campos = CAMPOS_ORIGEM.filter(function (campo) {
+      return /^[\w.-]{1,100}$/.test(busca.get(campo) || '');
+    }).map(function (campo) {
+      return campo + '=' + busca.get(campo);
+    });
+    if (!campos.length) return;
+    document.cookie = COOKIE_ORIGEM + '=' + campos.join('&') + '; path=/; max-age=2592000; samesite=lax' +
+      dominioOrigem() + (location.protocol === 'https:' ? '; secure' : '');
+  }
+
   var aviso = null;
 
   function mostrarAviso() {
@@ -93,6 +123,7 @@
       gravarEscolha(escolha);
       aviso.remove();
       aviso = null;
+      if (escolha === 'recusado') apagarOrigem();
       if (escolha === 'aceito') carregarAnalise();
       // Recusar depois de aceitar: recarrega para a análise sair da página
       else if (anterior === 'aceito') location.reload();
@@ -100,6 +131,8 @@
     var topo = document.querySelector('.topo');
     document.body.insertBefore(aviso, topo || document.body.firstChild);
   }
+
+  gravarOrigem();
 
   if (lerEscolha() === 'aceito') carregarAnalise();
   else if (lerEscolha() !== 'recusado') mostrarAviso();
