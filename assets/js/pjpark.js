@@ -44,21 +44,66 @@
 
   /* ---------- consentimento, Clarity e Contentsquare ---------- */
 
-  var CHAVE = 'pjpark-consentimento';
+  var CHAVE_ANTIGA = 'pjpark-consentimento';
+  var COOKIE_CONSENTIMENTO = 'pjpark_consentimento';
+  var VALIDADE_CONSENTIMENTO = 15552000;
+  var GOOGLE_ANALYTICS = 'G-B2R2E3B8TT';
+
+  function dominioPjpark() {
+    return /(^|\.)pjpark\.com\.br$/.test(location.hostname) ? '; domain=.pjpark.com.br' : '';
+  }
 
   function lerEscolha() {
-    try { return localStorage.getItem(CHAVE); } catch (e) { return null; }
+    var cookie = document.cookie.split('; ').filter(function (item) {
+      return item.indexOf(COOKIE_CONSENTIMENTO + '=') === 0;
+    })[0];
+    return cookie ? cookie.slice(COOKIE_CONSENTIMENTO.length + 1) : null;
   }
 
   function gravarEscolha(valor) {
+    document.cookie = COOKIE_CONSENTIMENTO + '=' + valor + '; path=/; max-age=' + VALIDADE_CONSENTIMENTO +
+      '; samesite=lax' + dominioPjpark() + (location.protocol === 'https:' ? '; secure' : '');
+  }
+
+  function migrarEscolhaAntiga() {
     try {
-      if (valor) localStorage.setItem(CHAVE, valor);
-      else localStorage.removeItem(CHAVE);
+      var antiga = localStorage.getItem(CHAVE_ANTIGA);
+      if (antiga === null) return;
+      localStorage.removeItem(CHAVE_ANTIGA);
+      if (antiga === 'recusado' && !lerEscolha()) gravarEscolha('recusado');
     } catch (e) {}
+  }
+
+  function carregarGoogleAnalytics() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', GOOGLE_ANALYTICS);
+    var ga = document.createElement('script');
+    ga.async = true;
+    ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GOOGLE_ANALYTICS;
+    document.head.appendChild(ga);
+  }
+
+  function apagarCookiesGoogleAnalytics() {
+    var dominio = location.hostname.replace(/^www\./, '');
+    document.cookie.split('; ').forEach(function (cookie) {
+      var nome = cookie.split('=')[0];
+      if (!/^_ga/.test(nome)) return;
+      document.cookie = nome + '=; path=/; max-age=0';
+      document.cookie = nome + '=; path=/; max-age=0; domain=.' + dominio;
+    });
   }
 
   function carregarAnalise() {
     if (window.clarity) return;
+    carregarGoogleAnalytics();
     var cs = document.createElement('script');
     cs.defer = true;
     cs.src = 'https://t.contentsquare.net/uxa/ad43e56ead802.js';
@@ -74,10 +119,6 @@
   var COOKIE_ORIGEM = 'pjpark_origem';
   var CAMPOS_ORIGEM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
 
-  function dominioOrigem() {
-    return /(^|\.)pjpark\.com\.br$/.test(location.hostname) ? '; domain=.pjpark.com.br' : '';
-  }
-
   function temOrigem() {
     return document.cookie.split('; ').some(function (cookie) {
       return cookie.indexOf(COOKIE_ORIGEM + '=') === 0;
@@ -85,7 +126,7 @@
   }
 
   function apagarOrigem() {
-    document.cookie = COOKIE_ORIGEM + '=; path=/; max-age=0' + dominioOrigem();
+    document.cookie = COOKIE_ORIGEM + '=; path=/; max-age=0' + dominioPjpark();
   }
 
   function gravarOrigem() {
@@ -98,7 +139,7 @@
     });
     if (!campos.length) return;
     document.cookie = COOKIE_ORIGEM + '=' + campos.join('&') + '; path=/; max-age=2592000; samesite=lax' +
-      dominioOrigem() + (location.protocol === 'https:' ? '; secure' : '');
+      dominioPjpark() + (location.protocol === 'https:' ? '; secure' : '');
   }
 
   var aviso = null;
@@ -110,8 +151,8 @@
     aviso.setAttribute('role', 'region');
     aviso.setAttribute('aria-label', 'Aviso de cookies');
     aviso.innerHTML =
-      '<p class="consentimento__texto">Usamos o Microsoft Clarity e o Contentsquare para entender como o site é usado: cliques, rolagem e páginas visitadas. ' +
-      'Eles só são ativados se você aceitar. <a href="' + raiz + 'politica-de-privacidade/#cookies">Como tratamos esses dados</a></p>' +
+      '<p class="consentimento__texto">Usamos o Google Analytics (só no site), o Microsoft Clarity e o Contentsquare para entender como o site e a plataforma são usados: cliques, rolagem e páginas visitadas. ' +
+      'Eles só são ativados se você aceitar, e a escolha vale para os dois. <a href="' + raiz + 'politica-de-privacidade/#cookies">Como tratamos esses dados</a></p>' +
       '<div class="acoes">' +
       '<button type="button" class="botao botao--sinal" data-escolha="aceito">Aceitar</button>' +
       '<button type="button" class="botao botao--linha" data-escolha="recusado">Recusar</button>' +
@@ -123,7 +164,10 @@
       gravarEscolha(escolha);
       aviso.remove();
       aviso = null;
-      if (escolha === 'recusado') apagarOrigem();
+      if (escolha === 'recusado') {
+        apagarOrigem();
+        apagarCookiesGoogleAnalytics();
+      }
       if (escolha === 'aceito') carregarAnalise();
       // Recusar depois de aceitar: recarrega para a análise sair da página
       else if (anterior === 'aceito') location.reload();
@@ -132,6 +176,7 @@
     document.body.insertBefore(aviso, topo || document.body.firstChild);
   }
 
+  migrarEscolhaAntiga();
   gravarOrigem();
 
   if (lerEscolha() === 'aceito') carregarAnalise();

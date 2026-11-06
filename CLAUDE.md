@@ -19,7 +19,7 @@ Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.
 | Caminho | O que é |
 |---|---|
 | `assets/css/pjpark.css` | Todo o CSS do site: tokens, componentes, tema claro e escuro |
-| `assets/js/pjpark.js` | Todo o JS comum: menu móvel, aviso de cookies + Clarity e Contentsquare, cookie da origem do cadastro, abertura da FAQ pela âncora |
+| `assets/js/pjpark.js` | Todo o JS comum: menu móvel, aviso de cookies + Google Analytics, Clarity e Contentsquare, cookie da origem do cadastro, abertura da FAQ pela âncora |
 | `assets/brand/lockup-horizontal.svg` · `-escuro.svg` | Lockup do nav e do rodapé (claro e escuro) |
 | `assets/brand/lane-pin-*.svg` | Símbolo isolado: principal, escuro, secundária, sólida, mono |
 | `assets/brand/pin-na-vaga.svg` | Ilustração do hero da home |
