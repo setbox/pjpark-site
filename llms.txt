@@ -13,6 +13,7 @@
 
 ## Guias
 
+- [Checklist do CNPJ parado](https://pjpark.com.br/checklist/): 8 passos gratuitos para descobrir como está a empresa parada e decidir entre manter e fechar.
 - [Estacionar ou encerrar](https://pjpark.com.br/blog/estacionar-ou-encerrar/)
 - [Empresa inativa, sem movimento ou baixada](https://pjpark.com.br/blog/empresa-inativa-sem-movimento-ou-baixada/)
 - [Inaptidão do CNPJ](https://pjpark.com.br/blog/inaptidao-do-cnpj/)

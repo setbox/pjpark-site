@@ -10,9 +10,9 @@ No build step, no framework, no CDN framework. Open any `.html` directly or serv
 
 Multi-page static site for **PJ Park** (pjpark.com.br) - escritório online para empresas inativas, marca da Setbox Serviços Digitais.
 
-Pages: `index` (home), `baixa-de-empresa/`, `regularizar-cnpj/`, `reativar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 31 posts em `blog/<slug>/` (4 deles casos reais anonimizados, só com fato documentado no arquivo da operação de 2020 a 2023), `termos-de-uso/`, `politica-de-privacidade/`. `404.html` na raiz (GitHub Pages serve para qualquer endereço inexistente): links e assets com caminho absoluto (`/assets/...`), `noindex`, fora do sitemap.
+Pages: `index` (home), `baixa-de-empresa/`, `regularizar-cnpj/`, `reativar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/` (índice agrupado por tema) + 31 posts em `blog/<slug>/` (4 deles casos reais anonimizados, só com fato documentado no arquivo da operação de 2020 a 2023), `termos-de-uso/`, `politica-de-privacidade/`, `checklist/` (landing do checklist do CNPJ parado, destino dos carrosséis do Instagram) + `checklist/obrigado/` (`noindex`, fora do sitemap). `404.html` na raiz (GitHub Pages serve para qualquer endereço inexistente): links e assets com caminho absoluto (`/assets/...`), `noindex`, fora do sitemap.
 
-Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.md`; the source of truth for the brand lives in the knowledge base at `~/obsidian/setbox/divisoes/pjpark/DESIGN.md`, with the master assets in `~/obsidian/setbox/divisoes/pjpark/assets/marca/`.
+Visual system: **Lane Pin** (pin amarelo + faixa grafite). Full spec in `DESIGN.md`; the source of truth for the brand lives in the knowledge base at `~/obsidian/setbox/divisoes/pjpark/criativo/marca/DESIGN.md`, with the master assets in `~/obsidian/setbox/divisoes/pjpark/criativo/marca/arquivos/`.
 
 ## Assets
 
@@ -36,8 +36,8 @@ Regenerar favicon ou OG: os fontes estão na base de conhecimento, comando em `D
 | Arquivo | Prefixo |
 |---|---|
 | `index.html` | `assets/` |
-| `baixa-de-empresa/`, `regularizar-cnpj/`, `reativar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/`, `termos-de-uso/`, `politica-de-privacidade/` | `../assets/` |
-| `blog/<slug>/` | `../../assets/` |
+| `baixa-de-empresa/`, `regularizar-cnpj/`, `reativar-cnpj/`, `servicos/`, `faq/`, `contato/`, `sobre/`, `blog/`, `termos-de-uso/`, `politica-de-privacidade/`, `checklist/` | `../assets/` |
+| `blog/<slug>/`, `checklist/obrigado/` | `../../assets/` |
 
 ## Nav
 
@@ -84,6 +84,7 @@ Quatro colunas (marca, PJ Park, Produto, Empresa); a coluna da marca termina no 
 | `.consentimento` | Aviso de cookies, criado pelo JS |
 | `.prosa`, `.prosa__tabela` | Texto longo: jurídico e blog |
 | `.mapa` | Iframe do Google Maps na página de contato |
+| `.formulario`, `.campo`, `.campo--marcar`, `.formulario__aviso`, `.formulario__isca` | Formulário da landing do checklist. Envia por POST HTML para `https://app.pjpark.com.br/interessados` (o app grava o interessado, manda o e-mail e redireciona para `checklist/obrigado/`, ou de volta com `?erro=1`). Campos e valores aceitos são contrato com o app: não renomear sem mudar lá |
 
 ## Content Rules
 

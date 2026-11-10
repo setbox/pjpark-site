@@ -580,6 +580,39 @@ p { margin: 0; }
 .etiqueta--erro i { background: var(--erro); }
 .etiqueta--neutra i { background: var(--asfalto); }
 
+/* formulario (landing do checklist) */
+.formulario { display: flex; flex-direction: column; gap: 18px; }
+.campo { display: flex; flex-direction: column; gap: 6px; border: 0; margin: 0; padding: 0; min-width: 0; }
+.campo__rotulo { font-size: 14px; font-weight: 600; }
+.campo__dica { font-size: 13px; color: var(--ink-2); font-weight: 400; }
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo select {
+  font: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 12px 14px;
+  min-height: 48px;
+  width: 100%;
+}
+.campo input:hover, .campo select:hover { border-color: var(--asfalto); }
+.campo--marcar { flex-direction: row; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; }
+.campo--marcar input { width: 20px; height: 20px; margin: 2px 0 0; flex: 0 0 auto; accent-color: var(--sinal); }
+.formulario .botao { justify-content: center; min-height: 48px; }
+.formulario__aviso {
+  border: 1px solid var(--erro);
+  border-left-width: 4px;
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+.formulario__aviso[hidden] { display: none; }
+.formulario__isca { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
 /* preco */
 .preco__unidade { margin-top: 6px; }
 
