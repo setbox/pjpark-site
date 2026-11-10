@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /assets/checklist-cnpj-parado.pdf
 
 Sitemap: https://pjpark.com.br/sitemap.xml
