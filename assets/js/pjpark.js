@@ -117,7 +117,7 @@
   }
 
   var COOKIE_ORIGEM = 'pjpark_origem';
-  var CAMPOS_ORIGEM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  var CAMPOS_ORIGEM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'vclid'];
 
   function temOrigem() {
     return document.cookie.split('; ').some(function (cookie) {
@@ -133,7 +133,8 @@
     if (lerEscolha() === 'recusado' || temOrigem()) return;
     var busca = new URLSearchParams(location.search);
     var campos = CAMPOS_ORIGEM.filter(function (campo) {
-      return /^[\w.-]{1,100}$/.test(busca.get(campo) || '');
+      var formato = campo === 'vclid' ? /^[\w-]{1,64}$/ : /^[\w.-]{1,100}$/;
+      return formato.test(busca.get(campo) || '');
     }).map(function (campo) {
       return campo + '=' + busca.get(campo);
     });
