@@ -211,7 +211,30 @@
       var campoInicio = document.getElementById('campo-started-at');
       if (campoInicio) campoInicio.value = String(Date.now());
       var aviso = document.getElementById('aviso-erro');
-      if (aviso && params.get('erro') === '1') aviso.hidden = false;
+      var erros = {
+        nome: { campo: 'name', texto: 'o nome' },
+        email: { campo: 'email', texto: 'o e-mail, que precisa ter o @ e não pode ter espaços' },
+        celular: { campo: 'phone', texto: 'o celular, com DDD e nove dígitos, como (41) 99999-1234, ou deixe em branco' },
+        tempo: { campo: 'idle_for', texto: 'há quanto tempo a empresa está parada' },
+        intencao: { campo: 'intent', texto: 'o que você pensa em fazer com ela' },
+        autorizacao: { campo: 'consent', texto: 'a autorização no fim do formulário' }
+      };
+      var codigos = (params.get('erro') || '').split(',');
+      var itens = codigos.filter(function (codigo) { return erros[codigo]; });
+      if (aviso && itens.length) {
+        var textos = itens.map(function (codigo) { return erros[codigo].texto; });
+        var lista = textos.length > 1 ? textos.slice(0, -1).join('; ') + '; e ' + textos[textos.length - 1] : textos[0];
+        aviso.textContent = 'Não deu para enviar. Confira ' + lista + '.';
+        aviso.hidden = false;
+        itens.forEach(function (codigo) {
+          var campo = document.querySelector('[name="' + erros[codigo].campo + '"]');
+          if (campo) campo.setAttribute('aria-invalid', 'true');
+        });
+        var primeiro = document.querySelector('[name="' + erros[itens[0]].campo + '"]');
+        if (primeiro) primeiro.focus();
+      } else if (aviso && codigos[0]) {
+        aviso.hidden = false;
+      }
     })();
   </script>
 </body>

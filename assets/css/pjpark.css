@@ -600,6 +600,8 @@ p { margin: 0; }
   width: 100%;
 }
 .campo input:hover, .campo select:hover { border-color: var(--asfalto); }
+.campo [aria-invalid="true"] { border-color: var(--erro); border-width: 2px; }
+.campo--marcar [aria-invalid="true"] { outline: 2px solid var(--erro); outline-offset: 2px; }
 .campo--marcar { flex-direction: row; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; }
 .campo--marcar input { width: 20px; height: 20px; margin: 2px 0 0; flex: 0 0 auto; accent-color: var(--sinal); }
 .formulario .botao { justify-content: center; min-height: 48px; }
