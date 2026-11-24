@@ -138,6 +138,7 @@
                 <label>Site <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
               </div>
               <input type="hidden" name="topic" id="campo-topic" value="site">
+              <input type="hidden" name="origin" id="campo-origin" value="site">
               <input type="hidden" name="started_at" id="campo-started-at" value="">
 
               <button type="submit" class="botao botao--sinal">Quero o checklist</button>
@@ -180,6 +181,7 @@
         <a href="../baixa-de-empresa/">Baixa de empresa</a>
         <a href="../servicos/">Serviços adicionais</a>
         <a href="../faq/">Perguntas frequentes</a>
+        <a href="../checklist/?origem=rodape" data-convite="rodape">Checklist do CNPJ parado</a>
         <a href="https://app.pjpark.com.br">Entrar</a>
       </div>
       <div class="rodape__coluna">
@@ -208,6 +210,11 @@
       var tema = (params.get('tema') || '').toLowerCase();
       var campoTopic = document.getElementById('campo-topic');
       if (campoTopic && temas.indexOf(tema) !== -1) campoTopic.value = tema;
+      var origens = ['blog', 'rodape', 'saida', 'instagram', 'vitrine', 'site'];
+      var origem = (params.get('origem') || '').toLowerCase();
+      if (!origem && temas.indexOf(tema) !== -1) origem = 'instagram';
+      var campoOrigin = document.getElementById('campo-origin');
+      if (campoOrigin && origens.indexOf(origem) !== -1) campoOrigin.value = origem;
       var campoInicio = document.getElementById('campo-started-at');
       if (campoInicio) campoInicio.value = String(Date.now());
       var aviso = document.getElementById('aviso-erro');

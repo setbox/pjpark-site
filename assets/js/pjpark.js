@@ -186,4 +186,25 @@
   document.addEventListener('click', function (e) {
     if (e.target.closest('[data-cookies]')) mostrarAviso();
   });
+
+  function enviarEvento(nome, origem) {
+    if (lerEscolha() !== 'aceito' || !window.dataLayer) return;
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('event', nome, { origem: origem });
+  }
+
+  document.addEventListener('click', function (e) {
+    var convite = e.target.closest('[data-convite]');
+    if (convite && e.target.closest('a')) enviarEvento('checklist_clique', convite.getAttribute('data-convite'));
+  });
+
+  var conviteBlog = document.querySelector('.convite[data-convite]');
+  if (conviteBlog && 'IntersectionObserver' in window) {
+    var observador = new IntersectionObserver(function (entradas) {
+      if (!entradas[0].isIntersecting) return;
+      enviarEvento('checklist_visto', conviteBlog.getAttribute('data-convite'));
+      observador.disconnect();
+    }, { threshold: 0.5 });
+    observador.observe(conviteBlog);
+  }
 })();

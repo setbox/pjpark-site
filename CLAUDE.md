@@ -55,7 +55,7 @@ Links para o app (`app.pjpark.com.br`) abrem na mesma aba, sem `target="_blank"`
 
 ## Footer
 
-Quatro colunas (marca, PJ Park, Produto, Empresa); a coluna da marca termina no ícone do LinkedIn (`.rodape__social`, SVG inline, nova aba), que também está no `sameAs` da Organization da home, com títulos em `<h2 class="rodape__titulo">` (não `h4`, para não pular nível). Empresa termina no botão `Preferências de cookies` (`data-cookies`), que reabre o aviso. Depois, faixa tracejada e a linha com o logo Setbox, o CNPJ 08.889.601/0001-09 e o endereço (Av. Carneiro Leão, 563 - Zona 01, Maringá / PR - 87014-010). Links Setbox sempre absolutos.
+Quatro colunas (marca, PJ Park, Produto, Empresa); a coluna da marca termina no ícone do LinkedIn (`.rodape__social`, SVG inline, nova aba), que também está no `sameAs` da Organization da home, com títulos em `<h2 class="rodape__titulo">` (não `h4`, para não pular nível). Produto tem o link do checklist (`?origem=rodape`). Empresa termina no botão `Preferências de cookies` (`data-cookies`), que reabre o aviso. Depois, faixa tracejada e a linha com o logo Setbox, o CNPJ 08.889.601/0001-09 e o endereço (Av. Carneiro Leão, 563 - Zona 01, Maringá / PR - 87014-010). Links Setbox sempre absolutos.
 
 ## Componentes do CSS
 
@@ -83,8 +83,9 @@ Quatro colunas (marca, PJ Park, Produto, Empresa); a coluna da marca termina no 
 | `.post__data` | Data do post (`<time datetime>`), no topo do post e no índice |
 | `.consentimento` | Aviso de cookies, criado pelo JS |
 | `.prosa`, `.prosa__tabela` | Texto longo: jurídico e blog |
+| `.convite` | Convite do checklist no fim do post, antes de Fontes (30 posts; fora de `parceria-para-contadores`). Link `checklist/?tema=<tema>&origem=blog`. `data-convite` no bloco e no link do rodapé dispara `checklist_visto` (só o bloco) e `checklist_clique` no Google Analytics, só de quem aceitou |
 | `.mapa` | Iframe do Google Maps na página de contato |
-| `.formulario`, `.campo`, `.campo--marcar`, `.formulario__aviso`, `.formulario__isca` | Formulário da landing do checklist. Envia por POST HTML para `https://app.pjpark.com.br/interessados` (o app grava o interessado, manda o e-mail e redireciona para `checklist/obrigado/`, ou de volta com `?erro=1`). Campos e valores aceitos são contrato com o app: não renomear sem mudar lá |
+| `.formulario`, `.campo`, `.campo--marcar`, `.formulario__aviso`, `.formulario__isca` | Formulário da landing do checklist. Envia por POST HTML para `https://app.pjpark.com.br/interessados` (o app grava o interessado, manda o e-mail e redireciona para `checklist/obrigado/`, ou de volta com `?erro=1`). Campos e valores aceitos são contrato com o app: não renomear sem mudar lá. `topic` vem de `?tema=` e `origin` de `?origem=` (`blog`, `rodape`, `saida`, `instagram`, `vitrine`; fora disso, `site`). Tema sem origem conta como `instagram`, porque a mensagem direta manda só o tema; por isso todo link interno com tema leva origem |
 
 ## Content Rules
 

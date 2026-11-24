@@ -1006,6 +1006,17 @@ img.so-escuro, .so-escuro { display: none; }
   background: var(--sinal);
 }
 
+.convite {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 24px;
+  margin: 40px 0;
+}
+.prosa .convite p { margin-bottom: 8px; }
+.prosa .convite__titulo { font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+.convite__link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+
 /* data do post */
 .post__data { font-family: "Overpass Mono", ui-monospace, monospace; font-size: 13px; color: var(--ink-2); }
 
