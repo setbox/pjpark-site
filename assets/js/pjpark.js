@@ -153,7 +153,7 @@
     aviso.setAttribute('aria-label', 'Aviso de cookies');
     aviso.innerHTML =
       '<p class="consentimento__texto">Usamos o Google Analytics (só no site), o Microsoft Clarity e o Contentsquare para entender como o site e a plataforma são usados: cliques, rolagem e páginas visitadas. ' +
-      'Eles só são ativados se você aceitar, e a escolha vale para os dois. <a href="' + raiz + 'politica-de-privacidade/#cookies">Como tratamos esses dados</a></p>' +
+      'Eles só são ativados se você aceitar, e a escolha vale para os dois. Se você chegou por uma campanha, guardamos a origem da visita em um cookie próprio; recusar apaga esse cookie. <a href="' + raiz + 'politica-de-privacidade/#cookies">Como tratamos esses dados</a></p>' +
       '<div class="acoes">' +
       '<button type="button" class="botao botao--sinal" data-escolha="aceito">Aceitar</button>' +
       '<button type="button" class="botao botao--linha" data-escolha="recusado">Recusar</button>' +
