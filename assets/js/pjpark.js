@@ -198,13 +198,105 @@
     if (convite && e.target.closest('a')) enviarEvento('checklist_clique', convite.getAttribute('data-convite'));
   });
 
+  var conviteVisto = false;
   var conviteBlog = document.querySelector('.convite[data-convite]');
   if (conviteBlog && 'IntersectionObserver' in window) {
     var observador = new IntersectionObserver(function (entradas) {
       if (!entradas[0].isIntersecting) return;
+      conviteVisto = true;
       enviarEvento('checklist_visto', conviteBlog.getAttribute('data-convite'));
       observador.disconnect();
     }, { threshold: 0.5 });
     observador.observe(conviteBlog);
   }
+
+  var CHAVE_CARTAO = 'pjpark-cartao-checklist';
+  var PAUSA_CARTAO = 2592000000;
+  var ESPERA_CARTAO = 30000;
+
+  function guardarCartao(valor) {
+    try {
+      localStorage.setItem(CHAVE_CARTAO, valor);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function cartaoLiberado() {
+    try {
+      var guardado = localStorage.getItem(CHAVE_CARTAO);
+      if (guardado === 'pedido') return false;
+      return !guardado || Date.now() - Number(guardado) > PAUSA_CARTAO;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  if (document.body.hasAttribute('data-checklist-pedido')) guardarCartao('pedido');
+
+  function prepararCartao() {
+    var chegada = Date.now();
+    var meioLido = false;
+    var encerrado = false;
+    var prosa = document.querySelector('.prosa');
+    var desktop = window.matchMedia('(min-width: 900px) and (hover: hover) and (pointer: fine)');
+
+    function medirLeitura() {
+      var area = prosa.getBoundingClientRect();
+      if (area.top + area.height / 2 <= window.innerHeight) meioLido = true;
+    }
+
+    function aoSair(e) {
+      if (e.relatedTarget || e.clientY > 0) return;
+      if (encerrado || !meioLido || conviteVisto || aviso || !desktop.matches) return;
+      if (Date.now() - chegada < ESPERA_CARTAO) return;
+      if (menu && menu.getAttribute('data-aberto') === 'true') return;
+      encerrado = true;
+      if (cartaoLiberado() && guardarCartao(String(Date.now()))) mostrarCartao();
+    }
+
+    window.addEventListener('scroll', medirLeitura, { passive: true });
+    document.addEventListener('mouseout', aoSair);
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('a[href^="https://app.pjpark.com.br"]')) encerrado = true;
+    });
+    medirLeitura();
+  }
+
+  function mostrarCartao() {
+    var endereco = new URL(conviteBlog.querySelector('a').href);
+    endereco.searchParams.set('origem', 'saida');
+    var cartao = document.createElement('aside');
+    cartao.className = 'cartao-saida';
+    cartao.setAttribute('aria-label', 'Convite para o checklist do CNPJ parado');
+    cartao.setAttribute('data-convite', 'saida');
+    cartao.innerHTML =
+      '<button type="button" class="cartao-saida__fechar" data-fechar aria-label="Fechar">&times;</button>' +
+      '<p class="cartao-saida__titulo">Antes de ir, veja como está a sua empresa</p>' +
+      '<p class="cartao-saida__texto">Oito passos para descobrir. Os três primeiros são grátis e não pedem senha.</p>' +
+      '<div class="acoes">' +
+      '<a class="botao botao--sinal">Ver o checklist</a>' +
+      '<button type="button" class="botao botao--linha" data-fechar>Agora não</button>' +
+      '</div>';
+    cartao.querySelector('a').href = endereco.href;
+
+    function fechar() {
+      cartao.remove();
+      document.removeEventListener('keydown', aoTeclar);
+    }
+
+    function aoTeclar(e) {
+      if (e.key === 'Escape') fechar();
+    }
+
+    cartao.addEventListener('click', function (e) {
+      if (e.target.closest('[data-fechar]')) fechar();
+    });
+    document.addEventListener('keydown', aoTeclar);
+    document.body.appendChild(cartao);
+    enviarEvento('checklist_visto', 'saida');
+  }
+
+  if (conviteBlog && conviteBlog.hasAttribute('data-saida') && cartaoLiberado()) prepararCartao();
 })();
